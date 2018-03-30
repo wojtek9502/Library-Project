@@ -17,6 +17,19 @@
     }
 }
 
- #sunday{
+ #sunday, #afterTime{
      color: darkred;
+ }
+
+ table,th,td,tr{
+     border: 1px solid;
+ }
+
+ thead{
+     font-size: 12px;
+     font-weight: bolder;
+ }
+
+ tbody{
+     font-size: 12px;
  }
