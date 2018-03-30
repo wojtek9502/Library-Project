@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Biblioteka">
     <meta name="author" content="Wojciech Kłusek">
-    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+    <link rel="icon" href="img/lib-icon.ico">
 
     <title>Zaloguj się</title>
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -15,18 +15,67 @@
 </head>
 
 <body class="text-center">
-<form class="form-signin">
-    <h1 class="h3 mb-3 font-weight-normal">Rejestracja</h1>
-    <label for="inputEmail" class="sr-only">Email</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-    <label for="inputPassword" class="sr-only">Hasło</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+<form class="" >
+    <h1 class="well">Rejestracja</h1>
+    <div class="col-lg-12 well">
+        <div class="row">
+            <form>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Imie</label>
+                            <input type="text" placeholder="" class="form-control" autofocus="">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Nazwisko</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                             <label>Email (jako login)</label>
+                             <input placeholder="example@example.com" rows="3" class="form-control">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="exampleInputPassword1">Hasło</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło">
+                          </div>
+                    </div>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj się</button>
-    <br>
-    <label>
-        <a class="btn" href="index.html">Wróć do strony głównej</a>
-    </label>
+                    <div class="row">
+                        <div class="col-sm-4 form-group">
+                            <label>Adres</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Kod pocztowy</label>
+                            <input type="text" placeholder="00-000" class="form-control">
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Miasto</label>
+                            <input type="text" placeholder="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Numer telefonu</label>
+                        <input type="text" placeholder="" class="form-control">
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            Akceptuje <a href="regulations.html" target="_blank">Regulamin</a>
+                        </label>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-lg btn-success">Zarejestruj się</button>
+                    <br>
+                    <a class="btn" href="index.html">Wróć do strony głównej</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
 </form>
 
 
