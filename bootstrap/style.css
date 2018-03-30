@@ -8,6 +8,11 @@
     padding: 9px 0;
 }
 
+h1, h2, h3, h4, h5, h6
+{
+    text-align: center;
+}
+
 @media (max-width: 980px) {
     /* Enable use of floated navbar text */
     .navbar-text.pull-right {
@@ -37,5 +42,11 @@
  #hours
  {
      font-weight: bold;
+ }
+
+ .hero-unit
+ {
+     font-size: 14.5px;
+
  }
 
