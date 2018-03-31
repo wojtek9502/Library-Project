@@ -1,3 +1,6 @@
+<?php
+echo '
+
 <!DOCTYPE html>
 <html lang="pl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -22,15 +25,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="index.html">Biblioteka</a>
+            <a class="brand" href="index.php">Biblioteka</a>
             <div class="nav-collapse collapse">
                 <p class="navbar-text pull-right">
-                    <a href="sign_in.html" class="navbar-link ">Zaloguj się</a>
+                     <a href="sign_in.php" class="navbar-link ">Zaloguj się</a>
                 </p>
                 <ul class="nav">
-                    <li><a href="regulations.html">Regulamin</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                    <li><a href="register.html">Zarejestruj się</a></li>
+                    <li><a href="regulations.php">Regulamin</a></li>
+                    <li><a href="contact.php">Kontakt</a></li>
+                    <li><a href="register.php">Zarejestruj się</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -46,10 +49,11 @@
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                     <li class="nav-header">Menu</li>
-                    <li><a href="catalog.html#">Katalog Online</a></li>
+                    <li><a href="catalog.php">Katalog Online</a></li>
                     <!--<li><a href="https://getbootstrap.com/2.3.2/examples/fluid.html#">Link</a></li>-->
                     <!--<li><a href="https://getbootstrap.com/2.3.2/examples/fluid.html#">Link</a></li>-->
                     <!--<li><a href="https://getbootstrap.com/2.3.2/examples/fluid.html#">Link</a></li>-->
+                    <a href="tmpUser.php">tmp user</a>
                 </ul>
 
                 <br>
@@ -69,41 +73,4 @@
             </div><!--/.well -->
         </div><!--/span-->
 
-
-        <!--CONTENT-->
-        <div class="span9">
-            <div class="hero-unit text-center">
-                <h2>Kontakt</h2>
-                <p>tel. +48 41 213-23-43, +48 41 235-45-75 w. 21, 73</p>
-                <p>e-mail: wypozyczalnia@gmail.pl</p>
-                <p>Kierownik: Jan Kowalski</p>
-                <p>e-mail: <a href="mailto:jan.kowalski@gmail.pl">jan.kowalski@gmail.pl</a> </p>
-
-                <br>
-                <h4>Jak nas znaleźć</h4><br>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2518.3570979604183!2d20.62586071489441!3d50.86158846553697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4718278ba35f70b3%3A0x856f6ebefd5a3324!2sWojew%C3%B3dzka+Biblioteka+Publiczna+im.+Witolda+Gombrowicza+w+Kielcach!5e0!3m2!1spl!2spl!4v1522418148604" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div><!--/hero_unit-->
-        </div><!--/span-->
-
-    </div><!--/row-->
-</div><!--/.fluid-container-->
-
-
-<script src="bootstrap/jquery.js"></script>
-<script src="bootstrap/bootstrap-transition.js"></script>
-<script src="bootstrap/bootstrap-alert.js"></script>
-<script src="bootstrap/bootstrap-modal.js"></script>
-<script src="bootstrap/bootstrap-dropdown.js"></script>
-<script src="bootstrap/bootstrap-scrollspy.js"></script>
-<script src="bootstrap/bootstrap-tab.js"></script>
-<script src="bootstrap/bootstrap-tooltip.js"></script>
-<script src="bootstrap/bootstrap-popover.js"></script>
-<script src="bootstrap/bootstrap-button.js"></script>
-<script src="bootstrap/bootstrap-collapse.js"></script>
-<script src="bootstrap/bootstrap-carousel.js"></script>
-<script src="bootstrap/bootstrap-typeahead.js"></script>
-<script src="js/time.js"></script>
-
-
-
-</body></html>
+';?>

@@ -1,3 +1,6 @@
+<?php
+echo '
+
 <!DOCTYPE html>
 <html lang="pl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -25,9 +28,14 @@
   <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj się przez Facebook</button>
   <br>
   <label>
-    <a class="btn" href="index.html">Wróć do strony głównej</a>
+    <a class="btn" href="index.php">Wróć do strony głównej</a>
   </label>
 </form>
 
 
-</body></html>
+</body>
+</html>
+
+';
+
+?>

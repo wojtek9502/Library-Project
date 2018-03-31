@@ -1,3 +1,6 @@
+<?php
+echo '
+
 <!DOCTYPE html>
 <html lang="pl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -127,7 +130,7 @@
                     <button type="submit" class="btn btn btn-success">Zarejestruj się</button>
                 </div>
                 <div class="col-sm-12">
-                    <a class="btn" href="index.html">Wróć do strony głównej</a>
+                    <a class="btn" href="index.php">Wróć do strony głównej</a>
                 </div>
 
             </fieldset>
@@ -139,3 +142,7 @@
 </div>
 </body>
 </html>
+
+';
+
+?>
