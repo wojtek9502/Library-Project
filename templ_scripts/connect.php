@@ -1,14 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+$user = 'root';
+$password = '';
+$database = 'library';
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
+$id_conn = mysql_connect('localhost', $user, $password);
+if($id_conn == false) die ('Błąd połączenia z bazą danych'); 
+@mysql_select_db($database) or die("Nie udało się wybrać bazy danych");
 ?>

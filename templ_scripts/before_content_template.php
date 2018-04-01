@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION))
+{
+  session_start();
+}
 echo '
 
 <!DOCTYPE html>
@@ -26,14 +30,26 @@ echo '
                 <span class="icon-bar"></span>
             </button>
             <a class="brand" href="index.php">Biblioteka</a>
-            <div class="nav-collapse collapse">
-                <p class="navbar-text pull-right">
-                     <a href="sign_in.php" class="navbar-link ">Zaloguj się</a>
-                </p>
-                <ul class="nav">
+                    <ul class="nav">
                     <li><a href="regulations.php">Regulamin</a></li>
                     <li><a href="contact.php">Kontakt</a></li>
-                    <li><a href="register.php">Zarejestruj się</a></li>
+';
+                    if(!isset($_SESSION['user']))
+                    {
+                       echo '<li><a href="register.php">Zarejestruj się</a></li>';
+                       echo '<li><a href="login_form.php">Zaloguj się</a></li>';
+                    }
+                    else
+                    {
+                       echo '<li><a href="tmpUser.php">Witaj '.$_SESSION["user"].'</a></li>';
+                       echo '<li><a href="/templ_scripts/logout.php">Wyloguj się</a></li>';
+                      //    <form action="/templ_scripts/logout.php" method="POST">
+                       //
+                      //    <li><a href="tmpUser.php">Wyloguj się</a></li>
+                      //    </form>
+                      //  ';
+                   }
+echo '
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

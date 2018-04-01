@@ -1,7 +1,6 @@
 <?php
-include("/templ_scripts/connect.php");  //potem usunac
-include("/templ_scripts/before_content_template.php");
 
+include("/templ_scripts/before_content_template.php");
 echo '
 
 <!--CONTENT-->
@@ -13,7 +12,6 @@ echo '
             <li><p>Gdy już je założysz, zaloguj się, przejdź do Katalogu Online by przejrzeć książki w bibliotece.</p></li>
             <li><p>Możesz też sprawdzić wypożyczone książki klikając na nazwę swojego użytkownika po prawej stronie górnego menu.</p></li>
         </ul>
-        <?php echo "kek" ?>
     </div>
 </div><!--/row-->
 </div><!--/span-->

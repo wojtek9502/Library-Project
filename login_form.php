@@ -17,12 +17,12 @@ echo '
 </head>
 
 <body class="text-center">
-<form class="form-signin">
+<form class="form-signin" action="/templ_scripts/login.php" method="POST">
   <h1 class="h3 mb-3 font-weight-normal">Logowanie</h1>
-  <label for="inputEmail" class="sr-only">Email</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email" autofocus="">
-  <label for="inputPassword" class="sr-only">Hasło</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Hasło">
+  <label for="login" class="sr-only">Login</label>
+  <input type="text" id="login" class="form-control" placeholder="login" autofocus="" name="login">
+  <label for="pass" class="sr-only">Hasło</label>
+  <input type="password" id="pass" class="form-control" placeholder="Hasło" name="pass">
 
   <button class="btn btn-lg btn-success btn-block" type="submit">Zaloguj się</button>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj się przez Facebook</button>
