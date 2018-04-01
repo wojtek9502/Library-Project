@@ -10,10 +10,10 @@ echo '
   <link rel="icon" href="img/lib-icon.ico">
 
   <title>Zaloguj się</title>
-  <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="scripts/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="bootstrap/signin.css" rel="stylesheet">
+  <link href="scripts/signin.css" rel="stylesheet">
 </head>
 
 <body class="text-center">

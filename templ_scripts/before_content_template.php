@@ -14,9 +14,9 @@ echo '
     <meta name="author" content="Wojtek Kłusek">
     <link rel="icon" href="img/lib-icon.ico">
 
-    <link href="bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="bootstrap/style.css" rel="stylesheet">
-    <link href="bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="scripts/bootstrap.css" rel="stylesheet">
+    <link href="scripts/style.css" rel="stylesheet">
+    <link href="scripts/bootstrap-responsive.css" rel="stylesheet">
 </head>
 
 <body>

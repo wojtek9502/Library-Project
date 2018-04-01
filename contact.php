@@ -7,7 +7,7 @@ echo '
             <div class="hero-unit text-center">
                 <h2>Kontakt</h2>
                 <p>tel. +48 41 213-23-43, +48 41 235-45-75 w. 21, 73</p>
-                <p>e-mail: wypozyczalnia@gmail.pl</p>
+                <p>e-mail: <a href="mailto:wypozyczalnia@gmail.pl">wypozyczalnia@gmail.pl</a> </p>
                 <p>Kierownik: Jan Kowalski</p>
                 <p>e-mail: <a href="mailto:jan.kowalski@gmail.pl">jan.kowalski@gmail.pl</a> </p>
 
