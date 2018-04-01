@@ -42,7 +42,7 @@ echo '
                     else
                     {
                        echo '<li><a href="tmpUser.php">Witaj '.$_SESSION["user"].'</a></li>';
-                       echo '<li><a href="/templ_scripts/logout.php">Wyloguj się</a></li>';
+                       echo '<li><a href="logout.php">Wyloguj się</a></li>';
                       //    <form action="/templ_scripts/logout.php" method="POST">
                        //
                       //    <li><a href="tmpUser.php">Wyloguj się</a></li>

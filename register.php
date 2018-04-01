@@ -9,9 +9,9 @@ echo '
     <link rel="icon" href="img/lib-icon.ico">
 
     <title>Zarejestruj się</title>
-    <link href="bootstrap/bootstrap.min2.css" rel="stylesheet" id="bootstrap-css">
-    <script src="bootstrap/bootstrap.min.js"></script>
-    <script src="bootstrap/jquery.js"></script>
+    <link href="scripts/bootstrap.min2.css" rel="stylesheet" id="bootstrap-css">
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/jquery.js"></script>
 </head>
 
 <body class="text-center">

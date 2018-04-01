@@ -17,7 +17,7 @@ echo '
 </head>
 
 <body class="text-center">
-<form class="form-signin" action="/templ_scripts/login.php" method="POST">
+<form class="form-signin" action="login.php" method="POST">
   <h1 class="h3 mb-3 font-weight-normal">Logowanie</h1>
   <label for="login" class="sr-only">Login</label>
   <input type="text" id="login" class="form-control" placeholder="login" autofocus="" name="login">

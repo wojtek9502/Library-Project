@@ -8,23 +8,21 @@
 
 </div><!--/.fluid-container-->
 
-<script src="bootstrap/jquery.js"></script>
-<script src="bootstrap/bootstrap-transition.js"></script>
-<script src="bootstrap/bootstrap-alert.js"></script>
-<script src="bootstrap/bootstrap-modal.js"></script>
-<script src="bootstrap/bootstrap-dropdown.js"></script>
-<script src="bootstrap/bootstrap-scrollspy.js"></script>
-<script src="bootstrap/bootstrap-tab.js"></script>
-<script src="bootstrap/bootstrap-tooltip.js"></script>
-<script src="bootstrap/bootstrap-popover.js"></script>
-<script src="bootstrap/bootstrap-button.js"></script>
-<script src="bootstrap/bootstrap-collapse.js"></script>
-<script src="bootstrap/bootstrap-carousel.js"></script>
-<script src="bootstrap/bootstrap-typeahead.js"></script>
-<script src="js/time.js"></script>
-<script src="tableScripts/sortTable.js"></script>
-
-
+<script src="scripts/jquery.js"></script>
+<script src="scripts/bootstrap-transition.js"></script>
+<script src="scripts/bootstrap-alert.js"></script>
+<script src="scripts/bootstrap-modal.js"></script>
+<script src="scripts/bootstrap-dropdown.js"></script>
+<script src="scripts/bootstrap-scrollspy.js"></script>
+<script src="scripts/bootstrap-tab.js"></script>
+<script src="scripts/bootstrap-tooltip.js"></script>
+<script src="scripts/bootstrap-popover.js"></script>
+<script src="scripts/bootstrap-button.js"></script>
+<script src="scripts/bootstrap-collapse.js"></script>
+<script src="scripts/bootstrap-carousel.js"></script>
+<script src="scripts/bootstrap-typeahead.js"></script>
+<script src="scripts/time.js"></script>
+<script src="scripts/sortTable.js"></script>
 
 </body>
 </html>
