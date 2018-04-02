@@ -36,12 +36,12 @@ echo '
 ';
                     if(!isset($_SESSION['user']))
                     {
-                       echo '<li><a href="register.php">Zarejestruj się</a></li>';
+                       echo '<li><a href="register_form.php">Zarejestruj się</a></li>';
                        echo '<li><a href="login_form.php">Zaloguj się</a></li>';
                     }
                     else
                     {
-                       echo '<li><a href="tmpUser.php">Witaj '.$_SESSION["user"].'</a></li>';
+                       echo '<li><a href="userPanel.php">Twój profil</a></li>';
                        echo '<li><a href="logout.php">Wyloguj się</a></li>';
                       //    <form action="/templ_scripts/logout.php" method="POST">
                        //
@@ -66,10 +66,6 @@ echo '
                 <ul class="nav nav-list">
                     <li class="nav-header">Menu</li>
                     <li><a href="catalog.php">Katalog Online</a></li>
-                    <!--<li><a href="https://getbootstrap.com/2.3.2/examples/fluid.html#">Link</a></li>-->
-                    <!--<li><a href="https://getbootstrap.com/2.3.2/examples/fluid.html#">Link</a></li>-->
-                    <!--<li><a href="https://getbootstrap.com/2.3.2/examples/fluid.html#">Link</a></li>-->
-                    <a href="tmpUser.php">tmp user</a>
                 </ul>
 
                 <br>

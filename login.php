@@ -23,18 +23,19 @@ else
     if ( ($login_from_db == $login_from_form) && ($pass_from_db == $pass_from_form)) {
       $correct_login_pass = true;
       $_SESSION['user'] = $row[4] .' '. $row[5];
-      echo "<h2>Poprawne hasło</h2>";
-      echo 'Zalogowano jako '.$_SESSION["user"];
+      $_SESSION['user_id'] = $row[0];
+      echo "<h2>Poprawne Dane</h2>";
+      echo '<b>Zalogowano jako '.$_SESSION["user"].'</b>';
       echo '<a class="btn" href="../index.php">Wróć do strony głównej</a>';
     }
 	}; #koniec przeszukiwania bazy
 
   if(!$correct_login_pass){
-    echo 'Niepoprawne hasło';
+    echo '<h2>Niepoprawne dane logowania'.'</h2>';
     echo '<a class="btn" href="../login_form.php">Wróć do strony logowania</a>';
     echo '<a class="btn" href="../index.php">Wróć do strony głównej</a>';
   }
 }
 include '/templ_scripts/login_after_content_template.php';
-
+mysql_close($id_conn);
 ?>

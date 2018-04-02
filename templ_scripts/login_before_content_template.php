@@ -8,11 +8,9 @@ echo '
   <meta name="author" content="Wojciech Kłusek">
   <link rel="icon" href="img/lib-icon.ico">
 
-  <title>Zaloguj się</title>
-  <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="bootstrap/signin.css" rel="stylesheet">
+  <title>Logowanie / Wylogowywanie</title>
+  <link href="scripts/bootstrap.min.css" rel="stylesheet">
+  <link href="scripts/signin.css" rel="stylesheet">
 </head>
 <body class="text-center">
 <form class="form-signin">

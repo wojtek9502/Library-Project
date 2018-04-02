@@ -21,9 +21,16 @@ echo '
     <div class="row">
         <h2>Zarejestruj się</h2>
 
-        <form class="form-horizontal" action="/action.php">
+        <form class="form-horizontal" action="/register.php" methode="POST">
             <fieldset>
                 <legend></legend>
+
+                <div class="col-sm-12">
+                    <a class="btn" href="index.php">Wróć do strony głównej</a>
+                </div>
+                <br>
+                <br>
+                <br>
 
                 <!--Login-->
                 <div class="form-group">
@@ -125,10 +132,16 @@ echo '
                         Akceptuje <a href="regulations.html" target="_blank">Regulamin</a>
                     </label>
                 </div>
+                <br>
+                <br>
+                <br>
 
                 <div class="col-sm-12">
                     <button type="submit" class="btn btn btn-success">Zarejestruj się</button>
                 </div>
+                <br>
+                <br>
+
                 <div class="col-sm-12">
                     <a class="btn" href="index.php">Wróć do strony głównej</a>
                 </div>
