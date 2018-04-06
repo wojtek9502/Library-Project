@@ -1,6 +1,6 @@
 <?php
-$login_from_form = $_POST['login'];
-$pass_from_form = $_POST['pass'];
+$login_from_form = htmlspecialchars($_POST['login']);
+$pass_from_form = htmlspecialchars($_POST['pass']);
 $correct_login_pass = false;
 $login_as_reader = false;
 $login_as_librarian = false;
@@ -18,9 +18,9 @@ else
 	{
     #echo $row[0] .' '. $row[1] .' '. $row[2] .' '. $row[3];
 		$login_from_db = $row[1];
-		$pass_from_db = $row[2];
+		$pass_hash_from_db = $row[2];
 
-    if ( ($login_from_db == $login_from_form) && ($pass_from_db == $pass_from_form)) {
+    if ( ($login_from_db == $login_from_form) && password_verify($pass_from_form, $pass_hash_from_db)) {
       $correct_login_pass = true;
       $_SESSION['user'] = $row[4] .' '. $row[5];
       $_SESSION['user_id'] = $row[0];
