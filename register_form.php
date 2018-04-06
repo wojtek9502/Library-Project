@@ -1,4 +1,20 @@
 <?php
+
+$usernames_array = "";
+include "/templ_scripts/connect.php";
+
+$result = mysql_query("SELECT user FROM user");
+if(!$result) echo 'BLAD zapytania loginow z bazy!';
+else
+{
+  while($row = mysql_fetch_row($result)) #przeszukaj baze
+	{
+		$usernames_array .= $row[0]; # .= do appendowania napisow
+		$usernames_array .= " ";
+	}; #koniec przeszukiwania bazy
+}
+mysql_close($id_conn);
+
 echo '
 
 <!DOCTYPE html>
@@ -12,6 +28,9 @@ echo '
     <link href="scripts/bootstrap.min2.css" rel="stylesheet" id="bootstrap-css">
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/jquery.js"></script>
+    <script src="scripts/valid_confirm_pass.js"></script>
+    <script src="scripts/valid_username_availability.js"></script>
+    <script src="scripts/register_btn_state.js"></script>
 </head>
 
 <body class="text-center">
@@ -21,7 +40,7 @@ echo '
     <div class="row">
         <h2>Zarejestruj się</h2>
 
-        <form class="form-horizontal" action="/register.php" methode="POST">
+        <form class="form-horizontal" action="register.php" method="POST">
             <fieldset>
                 <legend></legend>
 
@@ -36,26 +55,28 @@ echo '
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="login">Login</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="login" required="">
+                        <input type="text" id="login" name="login"  onchange="valid_usernames(\''.$usernames_array.'\')"  class="form-control"  required="" autofocus="">
                         <span class="help-block"> </span>
+                        <p id=login_availabillity></p>
                     </div>
                 </div>
 
                 <!--Hasło-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="pwd">Hasło</label>
+                    <label class="col-md-4 control-label" for="pass">Hasło</label>
                     <div class="col-md-4">
-                        <input type="password" class="form-control" id="pwd" required="">
+                        <input type="password" id="pass" name="pass" onchange="confirm_passwords()" class="form-control"  required="">
                         <span class="help-block"> </span>
                     </div>
                 </div>
 
                 <!--Hasło ponownie-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="pwd_confirm">Potwierdź hasło</label>
+                    <label class="col-md-4 control-label" for="pass_confirm">Potwierdź hasło</label>
                     <div class="col-md-4">
-                        <input type="password" class="form-control" id="pwd_confirm" required="">
+                        <input type="password" id="pass_confirm" onchange="confirm_passwords()" class="form-control"  required="">
                         <span class="help-block"> </span>
+                        <p id=confirm_status></p>
                     </div>
                 </div>
 
@@ -66,7 +87,7 @@ echo '
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="name">Imie</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="name" required="">
+                        <input type="text" id="name" name="name" class="form-control"  required="">
                         <span class="help-block"> </span>
                     </div>
                 </div>
@@ -75,7 +96,7 @@ echo '
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="surname">Nazwisko</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="surname" required="">
+                        <input type="text" id="surname" name="surname" class="form-control"  required="">
                         <span class="help-block"> </span>
                     </div>
                 </div>
@@ -84,7 +105,7 @@ echo '
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="email">Email</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="email" required="">
+                        <input type="text" id="email" name="email" class="form-control"  required="">
                         <span class="help-block"> </span>
                     </div>
                 </div>
@@ -93,7 +114,7 @@ echo '
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="address">Adres</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="address" required="">
+                        <input type="text" id="address" name="address" class="form-control" required="">
                         <span class="help-block"> </span>
                     </div>
                 </div>
@@ -102,7 +123,7 @@ echo '
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="post_code">Kod pocztowy</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="post_code" required="">
+                        <input type="text" id="post_code" name="post_code" class="form-control"  required="">
                         <span class="help-block"> </span>
                     </div>
                 </div>
@@ -111,7 +132,7 @@ echo '
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="city">Miasto</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="city" required="">
+                        <input type="text"  id="city" name="city" class="form-control" required="">
                         <span class="help-block"> </span>
                     </div>
                 </div>
@@ -120,7 +141,7 @@ echo '
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="phone">Telefon</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="phone" required="">
+                        <input type="text" id="phone" name="phone" class="form-control" required="">
                         <span class="help-block"> </span>
                     </div>
                 </div>
@@ -137,7 +158,7 @@ echo '
                 <br>
 
                 <div class="col-sm-12">
-                    <button type="submit" class="btn btn btn-success">Zarejestruj się</button>
+                    <button type="submit" id="register_btn" class="btn btn btn-success">Zarejestruj się</button>
                 </div>
                 <br>
                 <br>
@@ -152,10 +173,12 @@ echo '
         <br>
         <br>
     </div>
+
 </div>
 </body>
 </html>
 
 ';
+
 
 ?>

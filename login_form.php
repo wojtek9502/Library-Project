@@ -1,4 +1,6 @@
 <?php
+#atrybut name w <input> powinien byc taki sam jak przy odczytywaniu zmiennej na stronie z action !!!!!
+
 echo '
 
 <!DOCTYPE html>
