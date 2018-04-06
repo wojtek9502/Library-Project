@@ -1,38 +1,6 @@
 <?php
 
-$search = htmlspecialchars($_GET['search']);
-$search_filter = htmlspecialchars($_GET['search_filter']);
-// echo $search;
-// echo $search_filter;
-
-
-switch ($search_filter) {
-  case 'author':
-  {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
-              FROM book
-              INNER JOIN copy ON book.id = copy.book_id
-              WHERE book.author LIKE '%{$search}%'";
-  }break;
-
-  case 'title':
-  {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
-              FROM book
-              INNER JOIN copy ON book.id = copy.book_id
-              WHERE book.title LIKE '%{$search}%'";
-  }break;
-
-
-  default:
-  {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
-              FROM book
-              INNER JOIN copy ON book.id = copy.book_id
-              WHERE book.author LIKE '%{$search}%' OR book.title LIKE '%{$search}%'";
-  }break;
-}
-
+include "/templ_scripts/search_rules.php";
 include "/templ_scripts/connect.php";
 include '/templ_scripts/before_content_template.php';
 
@@ -43,21 +11,10 @@ echo '
             <div class="hero-unit text-center">
                 <h2>Katalog</h2>
                 <br>
-                <form class="form-inline" action="catalog_search.php" method="GET">
-                      <label class="mr-sm-2" for="search_label">Wyszukaj</label>
-                      <input type="text" id="search_label" name="search" required="">
-
-                      <label class="mr-sm-2" for="search_select">Szukaj po</label>
-                       <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="search_filter" id="search_filter">
-                         <option selected value="all">Wszystko</option>
-                         <option value="author">Autor</option>
-                         <option value="title">Tutuł</option>
-                       </select>
-
-                      <button type="submit" class="btn btn-primary">Szukaj</button>
-                </form>
-
-
+';
+              //pasek wyszukiwania
+              include("/templ_scripts/search_bar.php");
+echo '
 
                 <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
                     <table class="table table-striped sortable text-center">
