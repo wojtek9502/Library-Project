@@ -24,6 +24,7 @@ else
       $correct_login_pass = true;
       $_SESSION['user'] = $row[4] .' '. $row[5];
       $_SESSION['user_id'] = $row[0];
+      $_SESSION['user_view'] = $row[3];
       echo "<h2>Poprawne Dane</h2>";
       echo '<b>Zalogowano jako '.$_SESSION["user"].'</b>';
       echo '<a class="btn" href="../index.php">Wróć do strony głównej</a>';

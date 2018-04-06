@@ -129,7 +129,7 @@ echo '
                 <div class="col-sm-12 form-check">
                     <input class="form-check-input" type="checkbox" value="" id="acptChectbox" required="">
                     <label class="form-check-label" for="acptChectbox">
-                        Akceptuje <a href="regulations.html" target="_blank">Regulamin</a>
+                        Akceptuje <a href="regulations.php" target="_blank">Regulamin</a>
                     </label>
                 </div>
                 <br>

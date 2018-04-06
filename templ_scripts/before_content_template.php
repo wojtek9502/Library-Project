@@ -41,13 +41,11 @@ echo '
                     }
                     else
                     {
-                       echo '<li><a href="userPanel.php">Twój profil</a></li>';
+                       echo '<li><a href="user_panel.php">Twój profil</a></li>';
+                       if ($_SESSION['user_view']=="LIBRARIAN") {
+                         echo '<li><a href="librarian_panel.php">Zarządzaj biblioteką</a></li>';
+                       }
                        echo '<li><a href="logout.php">Wyloguj się</a></li>';
-                      //    <form action="/templ_scripts/logout.php" method="POST">
-                       //
-                      //    <li><a href="tmpUser.php">Wyloguj się</a></li>
-                      //    </form>
-                      //  ';
                    }
 echo '
                 </ul>
