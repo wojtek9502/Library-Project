@@ -1,7 +1,7 @@
 <?php
-
+//jesli chcesz uzyc dodac <form> przed tym i </form> po tym
 echo '
-<form class="form-inline" action="catalog_search.php" method="GET">
+
       <label class="mr-sm-2" for="search_label">Wyszukaj</label>
       <input type="text" id="search_label" name="search" required="">
 

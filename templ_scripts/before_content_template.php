@@ -66,10 +66,13 @@ echo '
                       if(isset($_SESSION["user"]) && $_SESSION["user_view"]=="LIBRARIAN")
                       {
                         echo '<li class="nav-header">Zarządzaj biblioteką</li>';
-                        echo '<li><a href="lib_add_del_books_menu_page.php">Dodaj/usuń książkę</a></li>';
-                        echo '<li><a href="lib_give_take_book.php">Wypozyczanie oddawanie ksiazki</a></li>';
-                        echo '<li><a href="lib_payments.php">Regulacja zaległych płatności</a></li>';
-                        echo '<li><a href="lib_manage_users.php">Zarządzaj użytkownikami</a></li>';
+                        echo '<li><a href="lib_add_book_menu_page.php">Dodaj książkę</a></li>';
+                        echo '<li><a href="lib_del_book_menu_page.php">Usuń książkę</a></li>';
+                        echo '<li><a href="lib_add_copy_menu_page.php">Dodaj kopie ksiąźki</a></li>';
+                        echo '<li><a href="lib_del_copy_menu_page.php">Usuń kopie ksiąźki</a></li>';
+                        echo '<li><a href="lib_give_take_book_menu_page.php">Wypozyczanie oddawanie ksiazki</a></li>';
+                        echo '<li><a href="lib_payments_menu_page.php">Regulacja zaległych płatności</a></li>';
+                        echo '<li><a href="lib_manage_users_menu_page.php">Zarządzaj użytkownikami</a></li>';
                       }
 echo '
 

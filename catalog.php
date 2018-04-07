@@ -7,10 +7,12 @@ echo '
             <div class="hero-unit text-center">
                 <h2>Katalog</h2>
                 <br>
+                <form class="form-inline" action="catalog_search.php" method="GET">
 ';
-            //pasek wyszukiwania
-            include("/templ_scripts/search_bar.php");
+                    //pasek wyszukiwania
+                    include("/templ_scripts/search_bar.php");
 echo '
+                </form>
 
                 <br>
                 <br>

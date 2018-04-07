@@ -14,7 +14,7 @@ else{
   //Jak wszystko ok to wypisz zarejestrowanego
   echo "<h2>Dodano kopie książki</h2>";
   echo "<br>";
-  echo '<a class="btn" href="lib_add_del_books_menu_page.php">Wróć do poprzedniej strony</a>';
+  echo '<a class="btn" href="lib_add_copy_menu_page.php">Wróć do poprzedniej strony</a>';
 }
 
 

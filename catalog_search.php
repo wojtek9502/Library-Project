@@ -1,6 +1,6 @@
 <?php
 
-include "/templ_scripts/search_rules.php";
+include "/templ_scripts/search_copy_rules.php";
 include "/templ_scripts/connect.php";
 include '/templ_scripts/before_content_template.php';
 
@@ -11,11 +11,12 @@ echo '
             <div class="hero-unit text-center">
                 <h2>Katalog</h2>
                 <br>
+                <form class="form-inline" action="catalog_search.php" method="GET">
 ';
-              //pasek wyszukiwania
-              include("/templ_scripts/search_bar.php");
+                    //pasek wyszukiwania
+                    include("/templ_scripts/search_bar.php");
 echo '
-
+                </form>
                 <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
                     <table class="table table-striped sortable text-center">
                         <thead>
