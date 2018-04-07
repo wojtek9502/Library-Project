@@ -27,7 +27,7 @@ else{
   echo "Kategoria <b>".$category."</b>";
   echo "<br>";
   echo "<br>";
-  echo '<a class="btn" href="lib_add_del_books.php">Wróć do poprzedniej strony</a>';
+  echo '<a class="btn" href="lib_add_del_books_page.php">Wróć do poprzedniej strony</a>';
 }
 
 

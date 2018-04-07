@@ -3,7 +3,7 @@ echo '
 
 <!-- DODAJ KSIAZKE -->
         <div id="add_book" style="display: none">
-          <form class="form-inline" action="templ_scripts/lib_add_book_result.php" method="POST">
+          <form class="form-inline" action="lib_add_book_btn_result.php" method="POST">
             <div class="form-group">
               <label for="author">Autor</label>
               <input type="text" class="form-control" id="author" name="author" autofocus="" required="">
