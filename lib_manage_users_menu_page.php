@@ -5,7 +5,7 @@ echo '
         <!--CONTENT-->
         <div class="span9">
             <div class="hero-unit text-center">
-                <h2>Zarządzaj biblioteką</h2>
+                <h2>Zarządzaj użytkownikami</h2>
 
             </div><!--/hero_unit-->
         </div><!--/span-->

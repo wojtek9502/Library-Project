@@ -23,7 +23,7 @@ include '/templ_scripts/login_before_content_template.php';
 $sql = "INSERT INTO user
         VALUES ('', '{$login}', '{$hash_password}', 'READER', '{$name}', '{$surname}', '{$address}', '{$post_code}', '{$city}',  '{$phone}')";
 $result = mysql_query($sql);
-if(!$result) echo 'błąd zapytania';
+if(!$result) echo 'błąd dodania uzytkownika do bazy';
 else{
   //Jak wszystko ok to wypisz zarejestrowanego
   echo "<h2>Zarejestrowano</h2>";

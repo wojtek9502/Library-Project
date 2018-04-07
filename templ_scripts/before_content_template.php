@@ -42,9 +42,6 @@ echo '
                     else
                     {
                        echo '<li><a href="user_panel.php">Twój profil</a></li>';
-                       if ($_SESSION['user_view']=="LIBRARIAN") {
-                         echo '<li><a href="librarian_panel.php">Zarządzaj biblioteką</a></li>';
-                       }
                        echo '<li><a href="logout.php">Wyloguj się</a></li>';
                    }
 echo '
@@ -64,6 +61,18 @@ echo '
                 <ul class="nav nav-list">
                     <li class="nav-header">Menu</li>
                     <li><a href="catalog.php">Katalog Online</a></li>
+';
+
+                      if(isset($_SESSION["user"]) && $_SESSION["user_view"]=="LIBRARIAN")
+                      {
+                        echo '<li class="nav-header">Zarządzaj biblioteką</li>';
+                        echo '<li><a href="lib_add_del_books_menu_page.php">Dodaj/usuń książkę</a></li>';
+                        echo '<li><a href="lib_give_take_book.php">Wypozyczanie oddawanie ksiazki</a></li>';
+                        echo '<li><a href="lib_payments.php">Regulacja zaległych płatności</a></li>';
+                        echo '<li><a href="lib_manage_users.php">Zarządzaj użytkownikami</a></li>';
+                      }
+echo '
+
                 </ul>
 
                 <br>
