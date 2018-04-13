@@ -14,7 +14,7 @@ if ( ($book_id=="" || $copy_status=="") || ($book_id=="" && $copy_status=="")) {
    echo '<a class="btn" href="'.$return_link.'">Wróć do poprzedniej strony</a>';
 }else{
   $result = mysql_query($sql);
-  if(!$result) echo 'błąd dodania kopii do bazy';
+  if(!$result) echo 'błąd usunięcia kopii do bazy';
   else{
     //Jak wszystko ok to wypisz zarejestrowanego
     echo "<h2>Dodano kopie książki</h2>";

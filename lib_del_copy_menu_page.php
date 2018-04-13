@@ -6,10 +6,10 @@ echo '
         <!--CONTENT-->
         <div class="span9">
             <div class="hero-unit text-center ">
-                <h2>Dodaj kopie książki</h2>
+                <h2>Usuń kopie książki</h2>
                 <h6>Najpierw wyszukaj książkę</h6>
                 <br>
-                <form class="form-inline" action="lib_add_copy_search.php" method="GET">
+                <form class="form-inline" action="lib_del_copy_search.php" method="GET"> //do zmiany form
 ';
                   //pasek wyszukiwania
                   include("/templ_scripts/search_bar.php");
