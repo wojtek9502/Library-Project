@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION))
+{
+  session_start();
+}
 echo '
 <!DOCTYPE html>
 <html lang="pl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
