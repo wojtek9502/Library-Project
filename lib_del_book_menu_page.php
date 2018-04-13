@@ -9,7 +9,7 @@ echo '
                 <h2>Usuń książke</h2>
                 <h6>Najpierw wyszukaj książkę</h6>
                 <br>
-                <form class="form-inline" action="lib_add_copy_search.php" method="GET"> //do zmiany form
+                <form class="form-inline" action="lib_del_book_search.php" method="GET"> //do zmiany form
 ';
                   //pasek wyszukiwania
                   include("/templ_scripts/search_bar.php");
