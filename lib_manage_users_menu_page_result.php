@@ -99,8 +99,9 @@ echo'
             </tbody>
             </table>
           </div>
+          </form> <!-- end user info form-->
 
-          </form>
+
               <br>
               <br>
                 <h4>Aktualnie wypożyczone</h4>
@@ -158,7 +159,7 @@ echo'
 
                           //radio button z numerem kopii
                           echo '<td>
-                                  <label><input type="radio" name="copy_id" value="'.$row[1].'"></label>
+                                  <label><input type="radio" name="copy_id" value="'.$row[1].'" required=""></label>
                                 </td>';
                         };
                   } #else end
@@ -166,14 +167,24 @@ echo'
 echo '
                     </tbody>
                     </table>
+                    <p id="to_pay">Razem do zapłaty: '.$to_pay.' PLN za zaległe książki</p>
+
+                    <br>
+                    <h4>Wypożyczanie/oddawanie książki</h4>
                   <input type="submit" value="Oddaj książkę">
+                </form>                                              <!--end current borrowed form -->
+
+
+                <!--Wypozyczanie ksiazki -->
+                <form action="lib_manage_users_menu_page_borrow_copy.php" method="POST">
+
+                  <input type="submit" value="Wypożycz książkę">
                 </form>
 
 
 
-
                     <!--HISTORIA WYPOZYCZEŃ-->
-                    <p id="to_pay">Razem do zapłaty: '.$to_pay.' PLN za zaległe książki</p>
+
                     <br>
                 <h4>Historia wypożyczeń</h4>
                 <h6>Kliknij na nagłówek kolumny aby posortować.</h6>

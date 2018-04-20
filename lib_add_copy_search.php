@@ -2,6 +2,8 @@
 include "/templ_scripts/search_book_rules.php";
 include "/templ_scripts/connect.php";
 include "/templ_scripts/before_content_template.php";
+$_SESSION['search_copy_get_link'] = "?search=".$search."&search_filter=".$search_filter;  //zapisanie atrybutow wyszukiwania aby moc potem wrocic gdy zle wyszukiwanie
+
 echo '
         <!--CONTENT-->
         <div class="span9">
@@ -33,7 +35,6 @@ echo '
 
                 ';
                 //link powrotny dla strony dodawania kopii
-                $_SESSION['search_copy_get_link'] = "?search=".$search."&search_filter=".$search_filter;  //zapisanie atrybutow wyszukiwania aby moc potem wrocic gdy zle wyszukiwanie
                 $row_nr=0;
                 $result = mysql_query($query);
                 if(!$result) echo 'BLAD zapytania katalogu z bazy!';
