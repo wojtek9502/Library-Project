@@ -1,0 +1,4 @@
+first create "library" database
+next select this db
+next click on import and load file
+click execute
