@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 20 Kwi 2018, 20:04
+-- Czas generowania: 20 Kwi 2018, 23:30
 -- Wersja serwera: 10.1.31-MariaDB
 -- Wersja PHP: 5.6.34
 
@@ -49,7 +49,8 @@ INSERT INTO `book` (`id`, `isbn`, `title`, `author`, `pages`, `publish_year`, `c
 (5, '978-2-12-345680-7', 'Dzienniki Tom 2', 'Witold Gombrowicz', 200, '2010-03-11', 'Dziennik'),
 (6, '978-2-12-345680-8', 'Dzienniki Tom 3', 'Witold Gombrowicz', 200, '2010-03-12', 'Dziennik'),
 (7, '978-2-12-345680-9', 'Dzienniki Gwiazdowe', 'Stanis?aw Lem', 250, '2010-03-13', 'Komedia'),
-(8, '978-2-12-345681-1', 'Kongres Futurologiczny', 'Stanis?aw Lem', 200, '2010-03-14', 'Komedia');
+(8, '978-2-12-345681-1', 'Kongres Futurologiczny', 'Stanis?aw Lem', 200, '2010-03-14', 'Komedia'),
+(9, '213213213', 'Finansowy ninja', 'Jakis tam fagot', 73, '2018-04-14', 'dramat');
 
 -- --------------------------------------------------------
 
@@ -72,10 +73,9 @@ CREATE TABLE `borrowings` (
 
 INSERT INTO `borrowings` (`id`, `copy_id`, `user_id`, `borrow_date`, `give_date`, `book_id`) VALUES
 (1, 5, 2, '2018-03-01', '2018-04-01', 1),
-(10, 13, 4, '2018-04-20', '1970-02-01', 3),
-(11, 13, 4, '2018-04-20', '1970-01-01', 3),
-(12, 39, 4, '2018-04-20', '1970-01-01', 8),
-(21, 38, 1, '2018-04-20', '2018-05-20', 8);
+(25, 7, 1, '2018-04-20', '2018-05-20', 2),
+(26, 12, 2, '2018-04-20', '2018-05-20', 3),
+(27, 27, 2, '2018-04-20', '2018-06-20', 6);
 
 -- --------------------------------------------------------
 
@@ -100,7 +100,11 @@ INSERT INTO `borrowings_history` (`id`, `book_id`, `user_id`, `give_date`) VALUE
 (3, 1, 3, '2017-04-03'),
 (4, 3, 1, '2017-04-04'),
 (5, 4, 2, '2017-04-05'),
-(19, 7, 1, '2018-04-20');
+(19, 7, 1, '2018-04-20'),
+(20, 8, 1, '2018-04-20'),
+(21, 8, 1, '2018-04-20'),
+(22, 3, 1, '2018-04-20'),
+(23, 9, 2, '2018-04-20');
 
 -- --------------------------------------------------------
 
@@ -125,12 +129,12 @@ INSERT INTO `copy` (`id`, `book_id`, `status`) VALUES
 (4, 1, 'WOLNE'),
 (5, 1, 'WYPOZYCZONE'),
 (6, 2, 'DOSTEPNE NA MIEJSCU'),
-(7, 2, 'WOLNE'),
+(7, 2, 'WYPOZYCZONE'),
 (8, 2, 'WOLNE'),
 (9, 2, 'WOLNE'),
 (10, 2, 'WOLNE'),
 (11, 3, 'DOSTEPNE NA MIEJSCU'),
-(12, 3, 'WOLNE'),
+(12, 3, 'WYPOZYCZONE'),
 (13, 3, 'WYPOZYCZONE'),
 (14, 3, 'WOLNE'),
 (15, 3, 'WOLNE'),
@@ -145,20 +149,21 @@ INSERT INTO `copy` (`id`, `book_id`, `status`) VALUES
 (24, 5, 'WOLNE'),
 (25, 5, 'WOLNE'),
 (26, 6, 'DOSTEPNE NA MIEJSCU'),
-(27, 6, 'WOLNE'),
+(27, 6, 'PROLONGOWANA'),
 (28, 6, 'WOLNE'),
 (29, 6, 'WOLNE'),
 (30, 6, 'WYPOZYCZONE'),
 (31, 7, 'DOSTEPNE NA MIEJSCU'),
 (32, 7, 'WOLNE'),
-(33, 7, 'WYPOZYCZONE'),
+(33, 7, 'WOLNE'),
 (34, 7, 'WOLNE'),
 (35, 7, 'WYPOZYCZONE'),
 (36, 8, 'DOSTEPNE NA MIEJSCU'),
 (37, 8, 'WOLNE'),
-(38, 8, 'WYPOZYCZONE'),
+(38, 8, 'WOLNE'),
 (39, 8, 'WYPOZYCZONE'),
-(40, 8, 'WOLNE');
+(40, 8, 'WOLNE'),
+(83, 9, 'WOLNE');
 
 -- --------------------------------------------------------
 
@@ -230,31 +235,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `book`
 --
 ALTER TABLE `book`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT dla tabeli `borrowings`
 --
 ALTER TABLE `borrowings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT dla tabeli `borrowings_history`
 --
 ALTER TABLE `borrowings_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT dla tabeli `copy`
 --
 ALTER TABLE `copy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT dla tabeli `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

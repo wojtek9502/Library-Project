@@ -40,7 +40,7 @@ $result = mysql_query($insert_book_to_history);
 
 
 
-    echo "<h2>Wypozyczono książkę</h2>";
+    echo "<h2>Wypożyczono książkę</h2>";
     echo "<p>Id usera ".$user_id."</p>";
     echo "<p>id kopii ".$copy_id."</p>";
     echo "<br>";
