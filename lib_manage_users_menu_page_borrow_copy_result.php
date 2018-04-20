@@ -32,19 +32,11 @@ else
 
 $today = date('Y-m-d', strtotime('now'));
 $next_mth_date = date('Y-m-d', strtotime("+1 month", strtotime('now')));
-echo $next_mth_date;
 $insert_book_to_history = "INSERT INTO borrowings(id, copy_id, user_id, borrow_date, give_date, book_id)
                            VALUES ('', '{$copy_id}', '{$user_id}', '{$today}', '{$next_mth_date}', '{$book_id}')";
 
 $result = mysql_query($insert_book_to_history);
   if(!$result) die('błąd dodania ksiazki do wypozyczonych przez usera, w bazie');
-
-//zapytanie na dodanie oddanej ksiazki do historii wypozyczenia
-
-
-//dodanie oddanej ksiazki do tabeli historii
-
-
 
 
 

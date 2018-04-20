@@ -3,21 +3,21 @@
 include "/templ_scripts/search_copy_to_borrow_rules.php";
 include "/templ_scripts/connect.php";
 include '/templ_scripts/before_content_template.php';
-$_SESSION['link_to_back'] = "?search=".$search."&search_filter=".$search_filter;  //zmienne pochodza z search_copy_to_borrow_rules.php
 
 
 echo '
         <!--CONTENT-->
         <div class="span10">
             <div class="hero-unit text-center">
-                <h2>Katalog</h2>
+                <h2>Wypożycz ksiazke</h2>
                 <br>
+                <h6>Wypożyczenie dla użytkownika</h6>
 ';
                     //pasek info o userze
                     include("/templ_scripts/user_info_table.php");
 echo '
 
-                <form class="form-inline" action="lib_manage_users_menu_page_borrow_copy_search.php" method="POST">
+                <form class="form-inline" action="lib_manage_users_menu_page_borrow_copy_search.php" method="GET">
 
                 <label class="mr-sm-2" for="search_label">Wyszukaj</label>
                 <input type="text" id="search_label" name="search" required="">
@@ -34,7 +34,10 @@ echo '
 
                 </form>
 
+';
+$_SESSION['link_to_back'] = "?search=".$search."&search_filter=".$search_filter;  //zmienne pochodza z search_copy_to_borrow_rules.php
 
+echo'
             <form action="lib_manage_users_menu_page_borrow_copy_result.php" method="POST">
                 <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
                     <table class="table table-striped sortable text-center">

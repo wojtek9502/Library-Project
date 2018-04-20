@@ -118,7 +118,7 @@ echo'
                             <th scope="col">Data wypozyczenia (RRRR-MM-DD)</th>
                             <th scope="col">Oddaj do (RRRR-MM-DD)</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Prolonguj</th>
+                            <th scope="col">Kara</th>
                             <th scope="col">Działanie</th>
                         </tr>
                         </thead>
@@ -150,11 +150,11 @@ echo'
                           $days = abs($secs / 86400);
 
                           if($give_date >= $today ){  //gdy nie minal czas na oddanie
-                            echo '<td> <button type="button" class="btn-outline-primary">Prolonguj</button> </td>';
+                            echo '<td></td>';
                           }
                           else {
                             $to_pay += $days*$cost_per_day;
-                            echo '<td>Nie oddano ksiazki w terminie. Spoznienie o '.$days.' dni. Kara: '.$days*$cost_per_day.' PLN</td>';
+                            echo '<td>Nie oddano ksiazki w terminie. Spóżnienie o '.$days.' dni. Kara: '.$days*$cost_per_day.' PLN</td>';
                           }
 
                           //radio button z numerem kopii

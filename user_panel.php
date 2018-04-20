@@ -26,6 +26,8 @@ echo '
                 <br>
                 <h4>Aktualnie wypożyczone</h4>
                 <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
+
+                <form action="user_panel_prolong.php" method="POST">
                     <table class="table table-striped sortable text-center">
                         <thead>
                         <tr>
@@ -54,7 +56,7 @@ echo '
                           echo '<th scope="row">'.$row_nr.'</th>';
                           echo '<td>'.$row[4].'</td>';
                           echo '<td>'.$row[5].'</td>';
-                          echo '<td>'.$row[1].'</td>';
+                          echo '<td>'.$row[1].'</td>'; //copy_id
                           echo '<td>'.$row[6].'</td>';
                           echo '<td>'.$row[7].'</td>';
                           echo '<td>'.$row[8].'</td>';
@@ -65,8 +67,11 @@ echo '
                           $secs = $give_date - $today;
                           $days = abs($secs / 86400);
 
-                          if($give_date >= $today ){  //gdy nie minal czas na oddanie
-                            echo '<td> <button type="button" class="btn-outline-primary">Prolonguj</button> </td>';
+                          if($give_date >= $today &&  $row[8]!='PROLONGOWANA'){  //gdy nie minal czas na oddanie
+                            echo '<td><label><input type="radio" name="copy_id" value="'.$row[1].'" required=""></label></td></td>';
+                          }
+                          elseif ($give_date >= $today) {
+                            echo '<td></td>';
                           }
                           else {
                             $to_pay += $days*$cost_per_day;
@@ -78,6 +83,9 @@ echo '
 echo '
                     </tbody>
                     </table>
+                    <input type="submit" value="Prolonguj książkę">
+                  </form> <!-- koniec form prolonguj -->
+
                     <!--HISTORIA WYPOZYCZEŃ-->
                     <p id="to_pay">Razem do zapłaty: '.$to_pay.' PLN za zaległe książki</p>
                     <br>

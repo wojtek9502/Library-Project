@@ -18,7 +18,7 @@ echo '
         <!--CONTENT-->
         <div class="span9">
             <div class="hero-unit text-center ">
-                <h2>Wypozycz ksiazke</h2>
+                <h2>Wypożycz ksiazke</h2>
                 <h6>Wypożyczenie dla użytkownika</h6>
 
 ';
