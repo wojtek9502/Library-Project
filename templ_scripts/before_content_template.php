@@ -70,8 +70,6 @@ echo '
                         echo '<li><a href="lib_del_book_menu_page.php">Usuń książkę</a></li>';
                         echo '<li><a href="lib_add_copy_menu_page.php">Dodaj kopie ksiąźki</a></li>';
                         echo '<li><a href="lib_del_copy_menu_page.php">Usuń kopie ksiąźki</a></li>';
-                        echo '<li><a href="lib_give_take_book_menu_page.php">Wypozyczanie oddawanie ksiazki</a></li>';
-                        echo '<li><a href="lib_payments_menu_page.php">Regulacja zaległych płatności</a></li>';
                         echo '<li><a href="lib_manage_users_menu_page.php">Zarządzaj użytkownikami</a></li>';
                       }
 echo '

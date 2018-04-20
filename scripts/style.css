@@ -31,9 +31,19 @@ h1, h2, h3, h4, h5, h6
      color: darkred;
  }
 
+ #to_pay{
+    color: darkred;
+ }
+
  table,th,td,tr{
      border: 1px solid;
  }
+
+.user_info_table{
+  padding-left: 25%;
+  width: 50%;
+
+}
 
  input[type=radio] {
      width: 20px;
