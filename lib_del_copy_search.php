@@ -62,7 +62,7 @@ echo '
                     </tbody>
                     </table>
                     <br>
-                    <input type="submit" value="Usuń kopie">
+                    <input type="submit" value="Usuń egzemplarz">
                 </form>
                 </div>
               </div>
