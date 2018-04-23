@@ -165,7 +165,7 @@ echo'
                   } #else end
 
 echo '
-                    </tbody>
+                      </tbody>
                     </table>
                     <p id="to_pay">Razem do zapłaty: '.$to_pay.' PLN za zaległe książki</p>
 
@@ -186,49 +186,50 @@ echo '
                     <!--HISTORIA WYPOZYCZEŃ-->
 
                     <br>
-                <h4>Historia wypożyczeń</h4>
-                <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
-                    <table class="table table-striped sortable text-center">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Autor</th>
-                            <th scope="col">Książka</th>
-                            <th scope="col">Liczna stron</th>
-                            <th scope="col">Kategoria</th>
-                            <th scope="col">Data oddania (RRRR-MM-DD)</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-';
-                    $row_nr=0;
-                    $pages_counter = 0;
-                    $result = mysql_query($query_history);
-                    if(!$result) echo 'BLAD zapytania historii ksiazek z bazy!';
-                      else
-                      {
-                            while($row = mysql_fetch_row($result))
-                            {
-                              $row_nr++;
-                              echo '<tr>';
-                              echo '<th scope="row">'.$row_nr.'</th>';
-                              echo '<td>'.$row[0].'</td>';
-                              echo '<td>'.$row[1].'</td>';
-                              echo '<td>'.$row[2].'</td>'; $pages_counter+=$row[2];
-                              echo '<td>'.$row[3].'</td>';
-                              echo '<td>'.$row[4].'</td>';
-                            };
-                      } #else end
-echo '
-                        </tbody>
-                    </table>
+                    <h4>Historia wypożyczeń</h4>
+                    <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
+                        <table class="table table-striped sortable text-center">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Autor</th>
+                                <th scope="col">Książka</th>
+                                <th scope="col">Liczna stron</th>
+                                <th scope="col">Kategoria</th>
+                                <th scope="col">Data oddania (RRRR-MM-DD)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+    ';
+                        $row_nr=0;
+                        $pages_counter = 0;
+                        $result = mysql_query($query_history);
+                        if(!$result) echo 'BLAD zapytania historii ksiazek z bazy!';
+                          else
+                          {
+                                while($row = mysql_fetch_row($result))
+                                {
+                                  $row_nr++;
+                                  echo '<tr>';
+                                  echo '<th scope="row">'.$row_nr.'</th>';
+                                  echo '<td>'.$row[0].'</td>';
+                                  echo '<td>'.$row[1].'</td>';
+                                  echo '<td>'.$row[2].'</td>'; $pages_counter+=$row[2];
+                                  echo '<td>'.$row[3].'</td>';
+                                  echo '<td>'.$row[4].'</td>';
+                                };
+                          } #else end
+    echo '
+                            </tbody>
+                        </table>
 
-                    <p>Bazując na oddanych książkach przeczytałeś/ąś '.$pages_counter.' stron</p>
+                        <p>Bazując na oddanych książkach przeczytałeś/ąś '.$pages_counter.' stron<p>
 
+                </div>
             </div>
-        </div>
 
-';
+    ';
+
 include("/templ_scripts/after_content_template.php");
 mysql_close($id_conn);
 

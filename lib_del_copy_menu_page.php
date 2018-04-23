@@ -6,7 +6,7 @@ echo '
         <!--CONTENT-->
         <div class="span9">
             <div class="hero-unit text-center ">
-                <h2>Usuń kopie książki</h2>
+                <h2>Usuń egzemplarz książki</h2>
                 <h6>Najpierw wyszukaj książkę</h6>
                 <br>
                 <form class="form-inline" action="lib_del_copy_search.php" method="GET">

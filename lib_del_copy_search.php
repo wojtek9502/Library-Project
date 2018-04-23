@@ -6,7 +6,7 @@ echo '
         <!--CONTENT-->
         <div class="span9">
             <div class="hero-unit text-center ">
-                <h2>Usuń kopie książki</h2>
+                <h2>Usuń egzemplarz książki</h2>
                 <h6>Najpierw wyszukaj książkę</h6>
                 <br>
                 <form class="form-inline" action="lib_del_copy_search.php" method="GET">
@@ -24,6 +24,9 @@ echo '
                             <th scope="col">Id kopii</th>
                             <th scope="col">Autor</th>
                             <th scope="col">Tytuł</th>
+                            <th scope="col">Data wydania (YYYY-MM-DD)</th>
+                            <th scope="col">Gatunek</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Usuń</th>
                         </tr>
                         </thead>
@@ -45,6 +48,9 @@ echo '
                           echo '<th scope="row">'.$row[5].'</th>';
                           echo '<td>'.$row[0].'</td>';
                           echo '<td>'.$row[1].'</td>';
+                          echo '<td>'.$row[2].'</td>';
+                          echo '<td>'.$row[3].'</td>';
+                          echo '<td>'.$row[6].'</td>';
                           echo '<td><label><input type="radio" name="copy_id" value="'.$row[5].'"></label></td>';
 
                         };

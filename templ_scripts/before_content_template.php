@@ -68,9 +68,9 @@ echo '
                         echo '<li class="nav-header">Zarządzaj biblioteką</li>';
                         echo '<li><a href="lib_add_book_menu_page.php">Dodaj książkę</a></li>';
                         echo '<li><a href="lib_del_book_menu_page.php">Usuń książkę</a></li>';
-                        echo '<li><a href="lib_add_copy_menu_page.php">Dodaj kopie ksiąźki</a></li>';
-                        echo '<li><a href="lib_del_copy_menu_page.php">Usuń kopie ksiąźki</a></li>';
-                        echo '<li><a href="lib_manage_users_menu_page.php">Zarządzaj użytkownikami</a></li>';
+                        echo '<li><a href="lib_add_copy_menu_page.php">Dodaj egzemplarz ksiąźki</a></li>';
+                        echo '<li><a href="lib_del_copy_menu_page.php">Usuń egzemplarz ksiąźki</a></li>';
+                        echo '<li><a href="lib_manage_users_menu_page.php">Obługa czytelnika</a></li>';
                       }
 echo '
 

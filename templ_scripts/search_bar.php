@@ -10,7 +10,7 @@ echo '
          <option selected value="all">Wszystko</option>
          <option value="author">Autor</option>
          <option value="title">Tutuł</option>
-         <option value="category">Kategoria</option>
+         <option value="category">Gatunek</option>
        </select>
 
       <button type="submit" class="btn btn-primary">Szukaj</button>

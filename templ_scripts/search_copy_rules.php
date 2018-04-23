@@ -1,6 +1,4 @@
-<<?php
-//wymaga juz wczesniej polaczenia z baza (connect.php)!!!!
-
+<?php
 
 $search = htmlspecialchars($_GET['search']);
 $search_filter = htmlspecialchars($_GET['search_filter']);
@@ -14,7 +12,7 @@ switch ($search_filter) {
     $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
-              WHERE book.author LIKE '%{$search}%' AND book.status";
+              WHERE book.author LIKE '%{$search}%' AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
   }break;
 
   case 'title':
@@ -22,7 +20,7 @@ switch ($search_filter) {
     $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
-              WHERE book.title LIKE '%{$search}%'";
+              WHERE book.title LIKE '%{$search}%'  AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
   }break;
 
   case 'category':
@@ -30,7 +28,7 @@ switch ($search_filter) {
     $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
-              WHERE book.category LIKE '%{$search}%'";
+              WHERE book.category LIKE '%{$search}%' AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
   }break;
 
 
@@ -39,7 +37,7 @@ switch ($search_filter) {
     $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
-              WHERE book.author LIKE '%{$search}%' OR book.title LIKE '%{$search}%' OR book.category LIKE '%{$search}%'";
+              WHERE (book.author LIKE '%{$search}%' OR book.title LIKE '%{$search}%' OR book.category LIKE '%{$search}%')  AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
   }break;
 }
 

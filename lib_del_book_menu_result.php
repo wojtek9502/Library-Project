@@ -4,8 +4,13 @@ include "/templ_scripts/connect.php";
 include '/templ_scripts/login_before_content_template.php';
 $return_link = "lib_del_book_search.php".$_SESSION['search_book_get_link']; //utworzenie linku powrotnego do strony z wyszukaniem
 
+
 $sql = "DELETE FROM book
         WHERE id={$book_id}";
+
+$info_query = "SELECT id, author, title, category, publish_year FROM book WHERE id={$book_id}";
+$info_query_result = mysql_query($info_query);
+if(!$info_query_result) echo 'błąd pobrania info ksiazki z bazy';
 
 $get_number_book_copy = "SELECT COUNT(*) from copy WHERE book_id={$book_id}";
 
@@ -34,17 +39,33 @@ $get_number_book_copy = "SELECT COUNT(*) from copy WHERE book_id={$book_id}";
       $result = mysql_query($sql);
       if(!$result) echo 'błąd usuniecia kopii ksiazki z bazy';
       else{
-        //Jak wszystko ok to wypisz zarejestrowanego
-        echo "<h2>Usunięto książkę</h2>";
-        echo "<p>id książki ".$book_id."</p>";
-        echo "<br>";
+                while($row_info = mysql_fetch_row($info_query_result))
+                {
+                  echo "<h2>Usunięto książkę</h2>";
+                  echo "<p>id książki <b>".$row_info[0]."</b></p>";
+                  echo "<p>Autor <b>".$row_info[1]."</b></p>";
+                  echo "<p>Tytuł <b>".$row_info[2]."</b></p>";
+                  echo "<p>Kategoria <b>".$row_info[3]."</b></p>";
+                  echo "<p>Rok wydania <b>".$row_info[4]."</b></p>";
+                  echo "<br>";
+                };
           }
     }
     else
-    {  //gdy sa kopie ksiazki
+    { //gdy ksiazka ma swoja kopie w bazie
+      while($row_info = mysql_fetch_row($info_query_result))
+      {
       echo "<h2>Błąd</h2>";
-      echo "<p>Książka ma kopie. Nie mozna usunąć książki. Usuń napierw kopie</p>";
+      echo "<p><b>Ksiażka:</b><p>";
+      echo "<p>id książki <b>".$row_info[0]."</b></p>";
+      echo "<p>Autor <b>".$row_info[1]."</b></p>";
+      echo "<p>Tytuł <b>".$row_info[2]."</b></p>";
+      echo "<p>Kategoria <b>".$row_info[3]."</b></p>";
+      echo "<p>Rok wydania <b>".$row_info[4]."</b></p>";
+      echo "<br> <p><b>Posiada swoje egzemplarze w bazie, usuń je wybierając z lewego menu 'Usuń kopie książki' zanim usuniesz samą książkę</b></p>";
     }
+    }
+
 
 
       echo '<a class="btn" href="'.$return_link.'">Wróć do poprzedniej strony</a>';

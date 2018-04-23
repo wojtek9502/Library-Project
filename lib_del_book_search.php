@@ -24,6 +24,8 @@ echo '
                             <th scope="col">Id książki</th>
                             <th scope="col">Autor</th>
                             <th scope="col">Tytuł</th>
+                            <th scope="col">Gatunek</th>
+                            <th scope="col">Data wydania (YYYY-MM-DD)</th>
                             <th scope="col">Usuń</th>
                         </tr>
                         </thead>
@@ -45,6 +47,8 @@ echo '
                           echo '<th scope="row">'.$row[0].'</th>';
                           echo '<td>'.$row[2].'</td>';
                           echo '<td>'.$row[1].'</td>';
+                          echo '<td>'.$row[3].'</td>';
+                          echo '<td>'.$row[4].'</td>';
                           echo '<td><label><input type="radio" name="book_id" value="'.$row[0].'"></label></td>';
 
                         };

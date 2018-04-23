@@ -6,7 +6,7 @@ echo '
         <div class="span9">
             <div class="hero-unit text-center">
                 <h2>Zarządzaj użytkownikami</h2>
-                <p>Najpierw wyszukaj użytkownia</p>
+                <p>Najpierw wyszukaj użytkownika</p>
                 <form class="form-inline" action="lib_manage_users_menu_page_search.php" method="GET">
 
                 <label class="mr-sm-2" for="search_label">Wyszukaj</label>

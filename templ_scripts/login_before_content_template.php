@@ -12,7 +12,7 @@ echo '
   <meta name="author" content="Wojciech Kłusek">
   <link rel="icon" href="img/lib-icon.ico">
 
-  <title>Logowanie / Wylogowywanie</title>
+  <title>Biblioteka</title>
   <link href="scripts/bootstrap.min.css" rel="stylesheet">
   <link href="scripts/signin.css" rel="stylesheet">
 </head>

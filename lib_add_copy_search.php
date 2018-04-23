@@ -8,7 +8,7 @@ echo '
         <!--CONTENT-->
         <div class="span9">
             <div class="hero-unit text-center ">
-                <h2>Dodaj kopie książki</h2>
+                <h2>Dodaj egzemplarz książki</h2>
                 <h6>Najpierw wyszukaj książkę</h6>
                 <br>
                 <form class="form-inline" action="lib_add_copy_search.php" method="GET">
@@ -64,7 +64,7 @@ echo '
                     </tbody>
                     </table>
                     <br>
-                    <input type="submit" value="Dodaj książkę">
+                    <input type="submit" value="Dodaj egzemplarz książki">
                 </form>
                 </div>
               </div>
