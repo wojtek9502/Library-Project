@@ -38,11 +38,26 @@ $insert_book_to_history = "INSERT INTO borrowings(id, copy_id, user_id, borrow_d
 $result = mysql_query($insert_book_to_history);
   if(!$result) die('błąd dodania ksiazki do wypozyczonych przez usera, w bazie');
 
+//zapytania dla wyswietlenia informacji na stronie
+$user_info_query = mysql_query("SELECT name, surname, address, post_code, city FROM user WHERE id = {$user_id}");
+  if(!$user_info_query) die('blad zapytania informacyjnego o userze z bazy');
+$user_info_row = mysql_fetch_row($user_info_query);
 
+$copy_info_query = mysql_query("SELECT copy.id, book.author, book.title FROM book Inner JOIN copy ON copy.book_id=book.id WHERE copy.id = {$copy_id}");
+if(!$copy_info_query) die('blad zapytania informacyjnego o egzemplarzy z bazy');
+$copy_info_row = mysql_fetch_row($copy_info_query);
 
-    echo "<h2>Wypożyczono książkę</h2>";
-    echo "<p>Id usera ".$user_id."</p>";
-    echo "<p>id kopii ".$copy_id."</p>";
+//wyswietlenie informacji
+    echo "<h2>Wypożyczono</h2>";
+    echo "<p><b>dla użytkownika:</b></p>";
+    echo "<p>Imie i nazwisko: <b>".$user_info_row[0]." ".$user_info_row[1]."</b></p>";
+    echo "<p>Adres: <b>".$user_info_row[2].", ".$user_info_row[3].", ".$user_info_row[4]."</b></p>";
+
+    echo "<br>";
+    echo "<p><b>Egzemplarz książki: </b></p>";
+    echo "<p>Nr egzemplarza: <b> ".$copy_info_row[0]."</b></p>";
+    echo "<p>Autor: <b>".$copy_info_row[1]."</b></p>";
+    echo "<p>Tytuł: <b>".$copy_info_row[2]."</b></p>";
     echo "<br>";
 
     echo '<a class="btn" href="'.$return_link.'">Wróć do poprzedniej strony</a>';

@@ -3,7 +3,9 @@
 include("/templ_scripts/before_content_template.php");
 include("/templ_scripts/connect.php");
 
+
 $user_id = $_SESSION['user_id_in_manage_panel'];
+$return_link = "lib_manage_users_menu_page_result.php?user_id=".$_SESSION['user_id_in_manage_panel']; //utworzenie linku powrotnego do strony z wyszukaniem
 
 $user_info_query = "SELECT name, surname, address, city
           FROM user
@@ -18,6 +20,9 @@ echo '
         <!--CONTENT-->
         <div class="span9">
             <div class="hero-unit text-center ">
+
+            <a  href="'.$return_link.'">Wróć do profilu użytkownika</a>
+            
                 <h2>Wypożycz ksiazke</h2>
                 <h6>Wypożyczenie dla użytkownika</h6>
 
@@ -25,6 +30,7 @@ echo '
               //pasek info o userze
               include("/templ_scripts/user_info_table.php");
   echo '
+
 
                 <br>
               <h6>Najpierw wyszukaj książkę</h6>
@@ -43,6 +49,8 @@ echo '
 
                   <button type="submit" class="btn btn-primary">Szukaj</button>
                   </form>
+
+
               </div><!--/hero_unit-->
           </div><!--/span-->
 ';

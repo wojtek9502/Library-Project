@@ -15,6 +15,7 @@ $query_history = "SELECT book.author, book.title, book.pages, book.category, bor
 
 $cost_per_day = 0.2; //20gr za kazdy dzien spoznienia oddania ksiazki
 $to_pay=0.0;
+$prolog_available = False;
 
 echo '
 
@@ -77,14 +78,24 @@ echo '
                             $to_pay += $days*$cost_per_day;
                             echo '<td>Nie oddano ksiazki w terminie. Spoznienie o '.$days.' dni. Kara: '.$days*$cost_per_day.' PLN</td>';
                           }
+
+                          //badanie czy jest jakas ksiazka ktora mozna prolongowac
+                          if ($row[8]=='WYPOZYCZONE') {
+                            $prolog_available = True;
+                          }
                         };
                   } #else end
 
+                  echo '</tbody>';
+                  echo '</table>';
+                  if($prolog_available==True) //jesli jest jakas ksiazka do prolongowania wyswietl przycisk
+                  {
+                      echo '<input type="submit" value="Prolonguj książkę">';
+                  }
+                  echo '</form> <!-- koniec form prolonguj --> ';
+
 echo '
-                    </tbody>
-                    </table>
-                    <input type="submit" value="Prolonguj książkę">
-                  </form> <!-- koniec form prolonguj -->
+
 
                     <!--HISTORIA WYPOZYCZEŃ-->
                     <p id="to_pay">Razem do zapłaty: '.$to_pay.' PLN za zaległe książki</p>

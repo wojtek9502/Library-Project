@@ -33,6 +33,7 @@ echo '
                     <ul class="nav">
                     <li><a href="regulations.php">Regulamin</a></li>
                     <li><a href="contact.php">Kontakt</a></li>
+                    <li><a href="help.php">Pomoc</a></li>
 ';
                     if(!isset($_SESSION['user']))
                     {
@@ -43,7 +44,7 @@ echo '
                     {
                        echo '<li><a href="user_panel.php">Twój profil</a></li>';
                        echo '<li><a href="logout.php">Wyloguj się</a></li>';
-                   }
+                    }
 echo '
                 </ul>
             </div><!--/.nav-collapse -->

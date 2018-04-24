@@ -49,10 +49,10 @@ echo '
                           echo '<td>'.$row[1].'</td>';
                           echo '
                                   <td>
-                                   <label><input type="radio" name="copy_status" value="WOLNE">Wolne</label>
-                                   <label><input type="radio" name="copy_status" value="DOSTĘPNE NA MIEJSCU">Dostępne na miejscu</label>
+                                   <label><input type="radio" name="copy_status" value="WOLNE" required="">Wolne</label>
+                                   <label><input type="radio" name="copy_status" value="DOSTĘPNE NA MIEJSCU" required="">Dostępne na miejscu</label>
                                    </td>
-                                <td><label><input type="radio" name="book_id" value="'.$row[0].'"></label></td>
+                                <td><label><input type="radio" name="book_id" value="'.$row[0].'" required=""></label></td>
                           ';
 
                         };

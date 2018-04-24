@@ -49,7 +49,7 @@ echo '
                           echo '<td>'.$row[1].'</td>';
                           echo '<td>'.$row[3].'</td>';
                           echo '<td>'.$row[4].'</td>';
-                          echo '<td><label><input type="radio" name="book_id" value="'.$row[0].'"></label></td>';
+                          echo '<td><label><input type="radio" name="book_id" value="'.$row[0].'" required=""></label></td>';
 
                         };
                   } #else end

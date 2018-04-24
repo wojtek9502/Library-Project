@@ -51,7 +51,7 @@ echo '
                           echo '<td>'.$row[2].'</td>';
                           echo '<td>'.$row[3].'</td>';
                           echo '<td>'.$row[6].'</td>';
-                          echo '<td><label><input type="radio" name="copy_id" value="'.$row[5].'"></label></td>';
+                          echo '<td><label><input type="radio" name="copy_id" value="'.$row[5].'" required=""></label></td>';
 
                         };
                   } #else end

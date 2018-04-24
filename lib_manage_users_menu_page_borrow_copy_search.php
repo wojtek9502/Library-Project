@@ -3,12 +3,16 @@
 include "/templ_scripts/search_copy_to_borrow_rules.php";
 include "/templ_scripts/connect.php";
 include '/templ_scripts/before_content_template.php';
+$return_link = "lib_manage_users_menu_page_result.php?user_id=".$_SESSION['user_id_in_manage_panel']; //utworzenie linku powrotnego do strony z wyszukaniem
 
 
 echo '
         <!--CONTENT-->
         <div class="span10">
             <div class="hero-unit text-center">
+
+            <a  href="'.$return_link.'">Wróć do profilu użytkownika</a>
+
                 <h2>Wypożycz ksiazke</h2>
                 <br>
                 <h6>Wypożyczenie dla użytkownika</h6>

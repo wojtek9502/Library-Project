@@ -18,7 +18,7 @@ echo '
         <!--CONTENT-->
         <div class="span9">
             <div class="hero-unit text-center">
-                <h2>Zarządzaj użytkownikami</h2>
+                <h2>Obsługa czytelnika</h2>
                 <p>Najpierw wyszukaj użytkownia</p>
                 <form class="form-inline" action="lib_manage_users_menu_page_search.php" method="GET">
 
@@ -66,7 +66,7 @@ echo '
                           echo '<td>'.$row[5].'</td>';
                           echo '<td>'.$row[6].'</td>';
                           echo '<td>
-                                  <label><input type="radio" name="user_id" value="'.$row[7].'"></label>
+                                  <label><input type="radio" name="user_id" value="'.$row[7].'" required=""></label>
                                 </td>';
                         };
                   } #else end
@@ -75,7 +75,7 @@ echo '
                   </tbody>
                   </table>
 
-                  <input type="submit" value="Przejrzyj użytkownika">
+                  <input type="submit" value="Przejrzyj profil">
               </form>
             </div><!--/hero_unit-->
         </div><!--/span-->

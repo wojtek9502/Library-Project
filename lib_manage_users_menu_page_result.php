@@ -7,7 +7,7 @@ $_SESSION['user_id_in_manage_panel'] = $user_id;
 $_SESSION['link_to_back'] = "?user_id=".$user_id;  //zapisanie atrybutow wyszukiwania aby moc potem wrocic gdy zle wyszukiwanie
 
 
-$query = "SELECT borrowings.id, borrowings.copy_id, borrowings.book_id, borrowings.user_id, book.author, book.title, borrowings.borrow_date, borrowings.give_date, copy.status
+$borrowins_query = "SELECT borrowings.id, borrowings.copy_id, borrowings.book_id, borrowings.user_id, book.author, book.title, borrowings.borrow_date, borrowings.give_date, copy.status
           FROM borrowings
           INNER JOIN copy ON borrowings.copy_id=copy.id
           INNER JOIN book ON borrowings.book_id=book.id
@@ -20,13 +20,12 @@ $query_history = "SELECT book.author, book.title, book.pages, book.category, bor
 $user_info_query = "SELECT name, surname, address, post_code, city, phone, id, user, view
           FROM user
           WHERE id = {$user_id}";
+//pobranie informacji o uzytkowniku
+$user_info_result = mysql_query($user_info_query);
+  if(!$user_info_result) die('BLAD zapytania uzytkownika z bazy!');
 
 $cost_per_day = 0.2; //20gr za kazdy dzien spoznienia oddania ksiazki
 $to_pay=0.0;
-
-//pobranie informacji o uzytkowniku
-$user_info_result = mysql_query($user_info_query);
-if(!$user_info_result) echo 'BLAD zapytania uzytkownika z bazy!';
 
 
 echo '
@@ -49,59 +48,93 @@ echo '
             </thead>
 
 ';
-            while($row = mysql_fetch_row($user_info_result))
+            while($user_info_row = mysql_fetch_row($user_info_result))
             {
 echo '
               <tr>
                 <td><b>Id<b></td>
-          			<td>'.$row[6].' </td>
+          			<td>'.$user_info_row[6].' </td>
           		</tr>
           		<tr>
                 <td><b>Imie i Nazwisko<b></td>
-          			<td>'.$row[0].' '.$row[1].' </td>
+          			<td>'.$user_info_row[0].' '.$user_info_row[1].' </td>
           		</tr>
           		<tr>
                 <td><b>Adres<b></td>
-          			<td>'.$row[2].' </td>
+          			<td>'.$user_info_row[2].' </td>
           		</tr>
           		<tr>
                 <td><b>Kod pocztowy<b></td>
-          			<td>'.$row[3].' </td>
+          			<td>'.$user_info_row[3].' </td>
           		</tr>
           		<tr>
                 <td><b>Miasto<b></td>
-          			<td>'.$row[4].' </td>
+          			<td>'.$user_info_row[4].' </td>
           		</tr>
           		<tr>
                 <td><b>Telefon<b></td>
-          			<td>'.$row[5].' </td>
+          			<td>'.$user_info_row[5].' </td>
           		</tr>
               <tr>
                 <td><b>Login<b></td>
-                <td>'.$row[7].' </td>
+                <td>'.$user_info_row[7].' </td>
               </tr>
               <tr>
                 <td><b>Status<b></td>
-          			<td>'.$row[8].' </td>
+          			<td>'.$user_info_row[8].' </td>
           		</tr>
           		<tr>
                 <td><b>Zmien status na<b></td>
-          			<td>
-                  <label><input type="radio" name="user_status" value="READER" checked="">Czytelnik</label>
-                  <label><input type="radio" name="user_status" value="LIBRARIAN">Bibliotekarz</label>
-                  <input type="submit" value="Zmien status">
-                </td>
-          		</tr>
 ';
-            }; //endo of while
+            if ($user_info_row[6]=="1") {
+              echo '<td>
+                      Nie mozna zmienić statusu użytkownika o id=1
+                    </td>';
+            }
+            else
+            {
+              echo'<td>
+                    <label><input type="radio" name="user_status" value="READER" checked="">Czytelnik</label>
+                    <label><input type="radio" name="user_status" value="LIBRARIAN">Bibliotekarz</label>
+                    <input type="submit" value="Zmien status">
+                  </td>';
+            }
+
+echo '
+          		</tr>
+              </tbody>
+              </table>
+            </div>
+            </form> <!-- end user info form-->
+';
+            }; //end of while
+
 echo'
 
-            </tbody>
-            </table>
-          </div>
-          </form> <!-- end user info form-->
+          <!-- USUWANIE CZYTELNIKA-->
+            <br>
+            <h4>Usuwanie użytkownika</h4>
+';
+          $borrow_counter = mysql_query($borrowins_query); //licznik wypozyczen
+
+          $user_info_result = mysql_query($user_info_query);
+          $user_info_row = mysql_fetch_row($user_info_result);
+
+          echo '<form action="lib_manage_delete_user_result.php" method="POST" onsubmit="return confirm_dialog()">';
+
+          if ($user_info_row[8]=="LIBRARIAN") { //pobrane wczesniej. Nie mozna usuwac konta bibliotekarza
+            echo "<p>Nie można usunąć konta bibliotekarza. Aby to zrobić zmień jego status na 'Czytelnik'.</p>";
+          }
+          if (mysql_num_rows($borrow_counter)>0) { //jesli ma cos wypozyczone to nie mozna usunac
+            echo "<p>Nie można usunąć konta które ma wypożyczoną książkę.</p>";
+          }
+          elseif(mysql_num_rows($borrow_counter)==0){ //jesli nie ma nic wypozyczonego to usun
+              echo '<input type="submit" value="Usuń użytkownika">';
+          }
+          echo '</form>';
 
 
+echo '
               <br>
               <br>
                 <h4>Aktualnie wypożyczone</h4>
@@ -126,7 +159,7 @@ echo'
 
 ';
                 $row_nr=0;
-                $result = mysql_query($query);
+                $result = mysql_query($borrowins_query);
                 $borrowed_books_counter = mysql_num_rows($result);
                 if(!$result) echo 'BLAD zapytania ksiazek z bazy!';
                   else
