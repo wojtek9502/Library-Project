@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 20 Kwi 2018, 23:30
+-- Czas generowania: 25 Kwi 2018, 00:52
 -- Wersja serwera: 10.1.31-MariaDB
 -- Wersja PHP: 5.6.34
 
@@ -72,10 +72,9 @@ CREATE TABLE `borrowings` (
 --
 
 INSERT INTO `borrowings` (`id`, `copy_id`, `user_id`, `borrow_date`, `give_date`, `book_id`) VALUES
-(1, 5, 2, '2018-03-01', '2018-04-01', 1),
-(25, 7, 1, '2018-04-20', '2018-05-20', 2),
-(26, 12, 2, '2018-04-20', '2018-05-20', 3),
-(27, 27, 2, '2018-04-20', '2018-06-20', 6);
+(28, 8, 2, '2018-03-23', '2018-04-23', 2),
+(29, 34, 2, '2018-03-16', '2018-04-16', 7),
+(30, 9, 2, '2018-04-25', '2018-05-25', 2);
 
 -- --------------------------------------------------------
 
@@ -130,11 +129,11 @@ INSERT INTO `copy` (`id`, `book_id`, `status`) VALUES
 (5, 1, 'WYPOZYCZONE'),
 (6, 2, 'DOSTEPNE NA MIEJSCU'),
 (7, 2, 'WYPOZYCZONE'),
-(8, 2, 'WOLNE'),
-(9, 2, 'WOLNE'),
+(8, 2, 'WYPOZYCZONE'),
+(9, 2, 'WYPOZYCZONE'),
 (10, 2, 'WOLNE'),
 (11, 3, 'DOSTEPNE NA MIEJSCU'),
-(12, 3, 'WYPOZYCZONE'),
+(12, 3, 'PROLONGOWANA'),
 (13, 3, 'WYPOZYCZONE'),
 (14, 3, 'WOLNE'),
 (15, 3, 'WOLNE'),
@@ -156,14 +155,13 @@ INSERT INTO `copy` (`id`, `book_id`, `status`) VALUES
 (31, 7, 'DOSTEPNE NA MIEJSCU'),
 (32, 7, 'WOLNE'),
 (33, 7, 'WOLNE'),
-(34, 7, 'WOLNE'),
+(34, 7, 'WYPOZYCZONE'),
 (35, 7, 'WYPOZYCZONE'),
 (36, 8, 'DOSTEPNE NA MIEJSCU'),
 (37, 8, 'WOLNE'),
 (38, 8, 'WOLNE'),
 (39, 8, 'WYPOZYCZONE'),
-(40, 8, 'WOLNE'),
-(83, 9, 'WOLNE');
+(40, 8, 'WOLNE');
 
 -- --------------------------------------------------------
 
@@ -190,7 +188,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `user`, `pass`, `view`, `name`, `surname`, `address`, `post_code`, `city`, `phone`) VALUES
 (1, 'admin', '$2y$11$SSK4nOJIp3K9QCVJlWvN6.l8J4Jvj5.ha37q11Ck3Doleo0utF5XG', 'LIBRARIAN', 'Tomasz', 'Marzec', 'Rynek 12', '23-324', 'Kielce', '394959394'),
-(2, 'user1', '$2y$11$JHTbL3J6uDvOjtGGGQVZNurOuRBC0vyJ/C2kR96jeH76KMJXly56K', 'READER', 'Jan', 'Nowak', 'Weso?a 12', '12-234', 'Kielce', '273748283'),
+(2, 'user1', '$2y$11$JHTbL3J6uDvOjtGGGQVZNurOuRBC0vyJ/C2kR96jeH76KMJXly56K', 'READER', 'Jan', 'Nowak', 'Wesola 12', '12-234', 'Kielce', '273748283'),
 (3, 'user2', '$2y$11$l8Iw/Q/GVvU3Fc64atlKSuE5dS5TcZjEdeFlNHOmCR8i0T6hsFib2', 'READER', 'Adam', 'Kowal', 'Nowa 73', '34-534', 'Kielce', '483842838');
 
 --
@@ -241,7 +239,7 @@ ALTER TABLE `book`
 -- AUTO_INCREMENT dla tabeli `borrowings`
 --
 ALTER TABLE `borrowings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT dla tabeli `borrowings_history`

@@ -76,7 +76,7 @@ echo '
                           }
                           else {
                             $to_pay += $days*$cost_per_day;
-                            echo '<td>Nie oddano ksiazki w terminie. Spoznienie o '.$days.' dni. Kara: '.$days*$cost_per_day.' PLN</td>';
+                            echo '<td>Nie oddano ksiazki w terminie. Spoznienie o '.$days.' dni. Kara: '.round($days*$cost_per_day, 2).' PLN</td>';
                           }
 
                           //badanie czy jest jakas ksiazka ktora mozna prolongowac
@@ -98,7 +98,7 @@ echo '
 
 
                     <!--HISTORIA WYPOZYCZEŃ-->
-                    <p id="to_pay">Razem do zapłaty: '.$to_pay.' PLN za zaległe książki</p>
+                    <p id="to_pay">Razem do zapłaty: '.round($to_pay,2).' PLN za zaległe książki</p>
                     <br>
                 <h4>Historia wypożyczeń</h4>
                 <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
