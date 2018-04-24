@@ -19,7 +19,7 @@ echo '
                 </form>
 
                 <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
-                  <form action="lib_add_copy_menu_result.php" method="POST">
+                  <form action="lib_add_copy_menu_result.php" method="POST" onsubmit="return confirm_dialog()">
                     <table class="table table-striped sortable text-center">
                         <thead>
                         <tr>

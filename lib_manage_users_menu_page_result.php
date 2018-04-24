@@ -38,7 +38,7 @@ echo '
                 <h3>Tryb bibliotekarza</h3>
                 <br>
                 <h4>Informacje o użytkowniku</h4>
-          <form action="lib_manage_users_menu_page_change_status.php" method="POST">
+          <form action="lib_manage_users_menu_page_change_status.php" method="POST" onsubmit="return confirm_dialog()">
         <div class="user_info_table">
           <table class="table table-striped" >
             <thead>
@@ -107,7 +107,7 @@ echo'
                 <h4>Aktualnie wypożyczone</h4>
                 <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
 
-                <form action="lib_manage_users_menu_page_give_copy.php" method="POST">
+                <form action="lib_manage_users_menu_page_give_copy.php" method="POST" onsubmit="return confirm_dialog()">
                     <table class="table table-striped sortable text-center">
                         <thead>
                         <tr>
@@ -127,6 +127,7 @@ echo'
 ';
                 $row_nr=0;
                 $result = mysql_query($query);
+                $borrowed_books_counter = mysql_num_rows($result);
                 if(!$result) echo 'BLAD zapytania ksiazek z bazy!';
                   else
                   {
@@ -171,7 +172,14 @@ echo '
 
                     <br>
                     <h4>Wypożyczanie/oddawanie książki</h4>
-                  <input type="submit" value="Oddaj książkę">
+
+';
+                  if($borrowed_books_counter>0)
+                  {
+                    echo '<input type="submit" value="Oddaj książkę">';
+                  }
+
+echo '
                 </form>                                              <!--end current borrowed form -->
 
 

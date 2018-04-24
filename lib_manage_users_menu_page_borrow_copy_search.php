@@ -38,7 +38,7 @@ echo '
 $_SESSION['link_to_back'] = "?search=".$search."&search_filter=".$search_filter;  //zmienne pochodza z search_copy_to_borrow_rules.php
 
 echo'
-            <form action="lib_manage_users_menu_page_borrow_copy_result.php" method="POST">
+            <form action="lib_manage_users_menu_page_borrow_copy_result.php" method="POST" onsubmit="return confirm_dialog()">
                 <h6>Kliknij na nagłówek kolumny aby posortować.</h6>
                     <table class="table table-striped sortable text-center">
                         <thead>

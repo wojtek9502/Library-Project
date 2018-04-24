@@ -23,6 +23,7 @@
 <script src="scripts/bootstrap-typeahead.js"></script>
 <script src="scripts/time.js"></script>
 <script src="scripts/sortTable.js"></script>
+<script src="scripts/confirm_dialog.js"></script>
 
 </body>
 </html>

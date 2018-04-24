@@ -9,7 +9,7 @@ echo '
 
               <!-- DODAJ KSIAZKE -->
 
-                        <form class="form-inline" action="lib_add_book_menu_result.php" method="POST">
+                        <form class="form-inline" action="lib_add_book_menu_result.php" method="POST" onsubmit="return confirm_dialog()">
                           <div class="form-group">
                             <label for="author">Autor</label>
                             <input type="text" class="form-control" id="author" name="author" autofocus="" required="">
