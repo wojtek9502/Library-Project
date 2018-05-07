@@ -24,7 +24,7 @@
 <script src="scripts/time.js"></script>
 <script src="scripts/sortTable.js"></script>
 <script src="scripts/confirm_dialog.js"></script>
-
+<script src="scripts/search_advanced_checker.js"></script>
 </body>
 </html>
 

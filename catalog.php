@@ -6,11 +6,11 @@ echo '
         <div class="span9">
             <div class="hero-unit text-center">
                 <h2>Katalog</h2>
-                <br>
-                <form class="form-inline" action="catalog_search.php" method="GET">
+                <h5>Proszę wypełnić przynajmniej jedno pole</h5>
+                <form class="form-inline" action="catalog_search.php" method="GET" >
 ';
                     //pasek wyszukiwania
-                    include("/templ_scripts/search_bar.php");
+                    include("/templ_scripts/search_bar_advanced.php");
 echo '
                 </form>
 
