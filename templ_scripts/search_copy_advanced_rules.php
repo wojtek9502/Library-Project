@@ -23,7 +23,7 @@ if($search_category!==""){ //001
 switch ($emptyFields) {
   case '100':
   {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
+    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status, book.id
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
               WHERE book.title LIKE '%{$search_title}%' AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
@@ -31,7 +31,7 @@ switch ($emptyFields) {
 
   case '110':
   {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
+    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status, book.id
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
               WHERE book.title LIKE '%{$search_title}%'  AND book.author LIKE '%{$search_author}%'  AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
@@ -39,7 +39,7 @@ switch ($emptyFields) {
 
   case '111':
   {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
+    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status, book.id
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
               WHERE  book.title LIKE '%{$search_title}%'  AND book.author LIKE '%{$search_author}%' AND book.category LIKE '%{$search_category}%' AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
@@ -48,7 +48,7 @@ switch ($emptyFields) {
 
   case '011':
   {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
+    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status, book.id
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
               WHERE book.author LIKE '%{$search_author}%' AND book.category LIKE '%{$search_category}%' AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
@@ -56,7 +56,7 @@ switch ($emptyFields) {
 
   case '001':
   {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
+    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status, book.id
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
               WHERE book.author LIKE '%{$search_author}%' AND book.category LIKE '%{$search_category}%' AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
@@ -64,7 +64,7 @@ switch ($emptyFields) {
 
   case '010':
   {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
+    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status, book.id
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
               WHERE book.author LIKE '%{$search_author}%' AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
@@ -72,7 +72,7 @@ switch ($emptyFields) {
 
   case '101':
   {
-    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status
+    $query = "SELECT book.title, book.author, book.publish_year, book.category, book.pages, copy.id, copy.status, book.id
               FROM book
               INNER JOIN copy ON book.id = copy.book_id
               WHERE  book.title LIKE '%{$search_title}%' AND book.category LIKE '%{$search_category}%' AND copy.status NOT LIKE 'WYPOZYCZONE' AND copy.status NOT LIKE 'PROLONGOWANA'";
