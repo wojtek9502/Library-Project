@@ -1,4 +1,4 @@
-first create "library" database
-next select this db
-next click on import and load file
+first create "library" database in phpmyadmin
+select this db
+click import (on top menu) and load "library.sql" file
 click execute

@@ -27,7 +27,6 @@ echo '
   <input type="password" id="pass" class="form-control" placeholder="Hasło" name="pass">
 
   <button class="btn btn-lg btn-success btn-block" type="submit">Zaloguj się</button>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj się przez Facebook</button>
   <br>
   <label>
     <a class="btn" href="index.php">Wróć do strony głównej</a>
