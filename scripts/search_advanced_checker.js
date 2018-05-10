@@ -8,7 +8,4 @@ function search_advanced_checker() {
     } else {
       document.getElementById("search_button").disabled = false;
     }
-
-
-
 }

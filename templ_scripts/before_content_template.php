@@ -61,18 +61,20 @@ echo '
         <div class="span2">
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
-                    <li class="nav-header">Menu</li>
+                    <li><class="nav-header">Menu</li>
                     <li><a href="catalog.php">Katalog Online</a></li>
+                    <br>
 ';
 
                       if(isset($_SESSION["user"]) && $_SESSION["user_view"]=="LIBRARIAN")
                       {
-                        echo '<li class="nav-header">Zarządzaj biblioteką</li>';
+                        echo '<li><class="nav-header">Zarządzaj biblioteką</li>';
                         echo '<li><a href="lib_add_book_menu_page.php">Dodaj książkę</a></li>';
                         echo '<li><a href="lib_modify_book_menu_page.php">Modyfikuj książkę</a></li>';
                         echo '<li><a href="lib_del_book_menu_page.php">Usuń książkę</a></li>';
                         echo '<li><a href="lib_add_copy_menu_page.php">Dodaj egzemplarz ksiąźki</a></li>';
                         echo '<li><a href="lib_del_copy_menu_page.php">Usuń egzemplarz ksiąźki</a></li>';
+                        echo '<li><a href="lib_see_borrowed_books_manu_page.php">Zobacz wypożyczone ksiąźki</a></li>';
                         echo '<li><a href="lib_manage_users_menu_page.php">Obsługa czytelnika</a></li>';
                       }
 echo '
