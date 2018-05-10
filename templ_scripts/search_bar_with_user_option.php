@@ -11,7 +11,7 @@ echo '
          <option value="author">Autor</option>
          <option value="title">Tutuł</option>
          <option value="category">Gatunek</option>
-         <option value="user">Imie i/lub nazwisko użytkownika</option>
+         <option value="user">Imie lub nazwisko użytkownika</option>
        </select>
 
       <button type="submit" class="btn btn-primary">Szukaj</button>
