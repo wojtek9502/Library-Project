@@ -1,7 +1,7 @@
 <?php
-include "/templ_scripts/search_borrowed_copies_rules.php";
-include "/templ_scripts/connect.php";
-include "/templ_scripts/before_content_template.php";
+include "templ_scripts/search_borrowed_copies_rules.php";
+include "templ_scripts/connect.php";
+include "templ_scripts/before_content_template.php";
 
 echo '
         <!--CONTENT-->
@@ -13,7 +13,7 @@ echo '
                 <form class="form-inline" action="lib_see_borrowed_books_search.php" method="POST">
 ';
                   //pasek wyszukiwania
-                  include("/templ_scripts/search_bar_with_user_option.php");
+                  include("templ_scripts/search_bar_with_user_option.php");
 echo '
                 </form>
                 <br>
@@ -59,6 +59,6 @@ echo '
               </div>
 ';
 
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 mysql_close($id_conn);
 ?>

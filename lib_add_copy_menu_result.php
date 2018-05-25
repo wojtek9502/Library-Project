@@ -2,8 +2,8 @@
 $book_id = htmlspecialchars( isset($_POST['book_id']) ? $_POST['book_id'] : '' );
 $copy_status = htmlspecialchars( isset($_POST['copy_status']) ? $_POST['copy_status'] : '' );
 
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 
 $return_link = "lib_add_copy_search.php".$_SESSION['search_copy_get_link']; //utworzenie linku powrotnego do strony z wyszukaniem
 
@@ -39,6 +39,6 @@ if ( ($book_id=="" || $copy_status=="") || ($book_id=="" && $copy_status=="")) {
 
 echo '<a class="btn" href="'.$return_link.'">Wróć do poprzedniej strony</a>';
 
-include '/templ_scripts/login_after_content_template.php';
+include 'templ_scripts/login_after_content_template.php';
 mysql_close($id_conn);
 ?>

@@ -1,5 +1,5 @@
 <?php
-include("/templ_scripts/before_content_template.php");
+include("templ_scripts/before_content_template.php");
 
 echo '
         <!--CONTENT-->
@@ -10,7 +10,7 @@ echo '
                 <form class="form-inline" action="catalog_search.php" method="GET" >
 ';
                     //pasek wyszukiwania
-                    include("/templ_scripts/search_bar_advanced.php");
+                    include("templ_scripts/search_bar_advanced.php");
 echo '
                 </form>
 
@@ -32,5 +32,5 @@ echo '
 
 ';
 
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-include("/templ_scripts/before_content_template.php");
+include("templ_scripts/before_content_template.php");
 echo '
 
 <!--CONTENT-->
@@ -23,5 +23,5 @@ echo '
 
 ';
 
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 ?>

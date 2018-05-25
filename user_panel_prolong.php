@@ -1,6 +1,6 @@
 <?php
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 $copy_id = htmlspecialchars( isset($_POST['copy_id']) ? $_POST['copy_id'] : '' );
 
 $get_cur_date = "SELECT give_date FROM borrowings WHERE copy_id={$copy_id}";
@@ -33,6 +33,6 @@ $result = mysql_query($set_copy_status);
 
     echo '<a class="btn" href="user_panel.php">Wróć do poprzedniej strony</a>';
 
-include '/templ_scripts/login_after_content_template.php';
+include 'templ_scripts/login_after_content_template.php';
 mysql_close($id_conn);
 ?>

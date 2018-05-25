@@ -1,8 +1,8 @@
 <?php
 
-include "/templ_scripts/search_copy_advanced_rules.php";
-include "/templ_scripts/connect.php";
-include '/templ_scripts/before_content_template.php';
+include "templ_scripts/search_copy_advanced_rules.php";
+include "templ_scripts/connect.php";
+include 'templ_scripts/before_content_template.php';
 // zmienne pobierane z pierwszego includa
 $_SESSION['catalog_search_back_link'] = "?search_author=".$search_author."&search_title=".$search_title."&search_category=".$search_category;
 
@@ -15,7 +15,7 @@ echo '
             <form class="form-inline" action="catalog_search.php" method="GET" >
 ';
                 //pasek wyszukiwania
-                include("/templ_scripts/search_bar_advanced.php");
+                include("templ_scripts/search_bar_advanced.php");
 echo '
             </form>
 
@@ -72,7 +72,7 @@ echo '
 ';
 
 
-include '/templ_scripts/after_content_template.php';
+include 'templ_scripts/after_content_template.php';
 mysql_close($id_conn);
 
 ?>

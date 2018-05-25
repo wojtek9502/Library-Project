@@ -7,8 +7,8 @@ $login_as_librarian = false;
 #echo $login_from_form .' '. $pass_from_form;
 
 session_start();
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 
 $result = mysql_query("SELECT * FROM user");
 if(!$result) echo 'BLAD zapytania loginow z bazy!';
@@ -37,6 +37,6 @@ else
     echo '<a class="btn" href="../index.php">Wróć do strony głównej</a>';
   }
 }
-include '/templ_scripts/login_after_content_template.php';
+include 'templ_scripts/login_after_content_template.php';
 mysql_close($id_conn);
 ?>

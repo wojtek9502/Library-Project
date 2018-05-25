@@ -1,7 +1,7 @@
 <?php
-include "/templ_scripts/search_copy_rules.php";
-include "/templ_scripts/connect.php";
-include "/templ_scripts/before_content_template.php";
+include "templ_scripts/search_copy_rules.php";
+include "templ_scripts/connect.php";
+include "templ_scripts/before_content_template.php";
 echo '
         <!--CONTENT-->
         <div class="span9">
@@ -12,7 +12,7 @@ echo '
                 <form class="form-inline" action="lib_del_copy_search.php" method="GET">
 ';
                   //pasek wyszukiwania
-                  include("/templ_scripts/search_bar.php");
+                  include("templ_scripts/search_bar.php");
 echo '
                 </form>
 
@@ -68,6 +68,6 @@ echo '
               </div>
 ';
 
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 mysql_close($id_conn);
 ?>

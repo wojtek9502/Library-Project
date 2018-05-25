@@ -17,8 +17,8 @@ $options = [
 $hash_password = password_hash($pass, PASSWORD_BCRYPT, $options);
 
 
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 
 $sql = "INSERT INTO user
         VALUES ('', '{$login}', '{$hash_password}', 'READER', '{$name}', '{$surname}', '{$address}', '{$post_code}', '{$city}',  '{$phone}')";
@@ -37,6 +37,6 @@ else{
   echo '<a class="btn" href="../index.php">Wróć do strony głównej i zaloguj się.</a>';
 }
 
-include '/templ_scripts/login_after_content_template.php';
+include 'templ_scripts/login_after_content_template.php';
 mysql_close($id_conn);
  ?>

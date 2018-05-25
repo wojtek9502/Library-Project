@@ -1,6 +1,6 @@
 <?php
-include("/templ_scripts/before_content_template.php");
-include("/templ_scripts/connect.php");
+include("templ_scripts/before_content_template.php");
+include("templ_scripts/connect.php");
 $user_id = htmlspecialchars($_GET['user_id']);
 
 $_SESSION['user_id_in_manage_panel'] = $user_id;
@@ -271,7 +271,7 @@ echo '
 
     ';
 
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 mysql_close($id_conn);
 
 ?>

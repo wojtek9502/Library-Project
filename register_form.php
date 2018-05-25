@@ -1,7 +1,7 @@
 <?php
 
 $usernames_array = "";
-include "/templ_scripts/connect.php";
+include "templ_scripts/connect.php";
 
 $result = mysql_query("SELECT user FROM user");
 if(!$result) echo 'BLAD zapytania loginow z bazy!';

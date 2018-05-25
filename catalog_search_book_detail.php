@@ -1,8 +1,8 @@
 <?php
 $book_id = htmlspecialchars( isset($_POST['book_id']) ? $_POST['book_id'] : '' );
 
-include "/templ_scripts/connect.php";
-include("/templ_scripts/before_content_template.php");
+include "templ_scripts/connect.php";
+include("templ_scripts/before_content_template.php");
 
 $return_link = "catalog_search.php".$_SESSION['catalog_search_back_link']; //utworzenie linku powrotnego do strony z wyszukaniem
 
@@ -49,7 +49,7 @@ echo '
 </div><!--/hero_unit-->
 </div><!--/span-->
 ';
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 
 mysql_close($id_conn);
 ?>

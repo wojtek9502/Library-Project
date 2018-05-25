@@ -1,6 +1,6 @@
 <?php
-include "/templ_scripts/connect.php";
-include "/templ_scripts/before_content_template.php";
+include "templ_scripts/connect.php";
+include "templ_scripts/before_content_template.php";
 
 $search = htmlspecialchars($_GET['search']);
 $query = "SELECT name, surname, address, post_code, city, phone, view, id
@@ -81,6 +81,6 @@ echo '
         </div><!--/span-->
 ';
 
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 mysql_close($id_conn);
 ?>

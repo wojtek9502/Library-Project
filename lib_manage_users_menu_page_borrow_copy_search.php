@@ -1,8 +1,8 @@
 <?php
 
-include "/templ_scripts/search_copy_to_borrow_rules.php";
-include "/templ_scripts/connect.php";
-include '/templ_scripts/before_content_template.php';
+include "templ_scripts/search_copy_to_borrow_rules.php";
+include "templ_scripts/connect.php";
+include 'templ_scripts/before_content_template.php';
 $return_link = "lib_manage_users_menu_page_result.php?user_id=".$_SESSION['user_id_in_manage_panel']; //utworzenie linku powrotnego do strony z wyszukaniem
 
 
@@ -18,7 +18,7 @@ echo '
                 <h6>Wypożyczenie dla użytkownika</h6>
 ';
                     //pasek info o userze
-                    include("/templ_scripts/user_info_table.php");
+                    include("templ_scripts/user_info_table.php");
 echo '
 
                 <form class="form-inline" action="lib_manage_users_menu_page_borrow_copy_search.php" method="GET">
@@ -94,7 +94,7 @@ echo'
 ';
 
 
-include '/templ_scripts/after_content_template.php';
+include 'templ_scripts/after_content_template.php';
 mysql_close($id_conn);
 
 ?>

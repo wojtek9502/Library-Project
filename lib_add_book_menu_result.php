@@ -8,8 +8,8 @@ $category = htmlspecialchars($_POST['category']);
 $book_descript = htmlspecialchars($_POST['book_descript']);
 $img_link = htmlspecialchars($_POST['img_link']);
 
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 
 $sql = "INSERT INTO book(id, isbn, title, author, pages, publish_year, category, book_descript, img_link)
         VALUES ('', '{$isbn}', '{$title}', '{$author}', '{$pages}', '{$publish_year}', '{$category}', '{$book_descript}', '{$img_link}')";
@@ -37,6 +37,6 @@ else{
 }
 
 
-include '/templ_scripts/login_after_content_template.php';
+include 'templ_scripts/login_after_content_template.php';
 mysql_close($id_conn);
 ?>

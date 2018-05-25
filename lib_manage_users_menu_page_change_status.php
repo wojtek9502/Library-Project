@@ -1,6 +1,6 @@
 <?php
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 
 $return_link = "lib_manage_users_menu_page_result.php".$_SESSION['link_to_back']; //utworzenie linku powrotnego do strony z wyszukaniem
 $user_id = htmlspecialchars( isset($_SESSION['user_id_in_manage_panel'] ) ? $_SESSION['user_id_in_manage_panel']  : '' );

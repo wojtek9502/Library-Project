@@ -1,7 +1,7 @@
 <?php
 $book_id = htmlspecialchars( isset($_POST['book_id']) ? $_POST['book_id'] : '' );
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 $return_link = "lib_del_book_search.php".$_SESSION['search_book_get_link']; //utworzenie linku powrotnego do strony z wyszukaniem
 
 

@@ -9,8 +9,8 @@ $category = htmlspecialchars( isset($_POST['category']) ? $_POST['category'] : '
 $book_descript = htmlspecialchars( isset($_POST['book_descript']) ? $_POST['book_descript'] : '' );
 $img_link = htmlspecialchars( isset($_POST['img_link']) ? $_POST['img_link'] : '' );
 
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 $return_link = "lib_modify_book_search.php".$_SESSION['edit_link_back']; //utworzenie linku powrotnego do strony z wyszukaniem
 
 
@@ -41,6 +41,6 @@ $sql = "UPDATE book
       echo "<br>";
     }
 
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 mysql_close($id_conn);
 ?>

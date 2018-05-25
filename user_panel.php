@@ -1,6 +1,6 @@
 <?php
-include("/templ_scripts/before_content_template.php");
-include("/templ_scripts/connect.php");
+include("templ_scripts/before_content_template.php");
+include("templ_scripts/connect.php");
 
 
 $query = "SELECT borrowings.id, borrowings.copy_id, borrowings.book_id, borrowings.user_id, book.author, book.title, borrowings.borrow_date, borrowings.give_date, copy.status
@@ -143,7 +143,7 @@ echo '
         </div>
 
 ';
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 mysql_close($id_conn);
 
 ?>

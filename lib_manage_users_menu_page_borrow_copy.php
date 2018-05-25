@@ -1,7 +1,7 @@
 <?php
 ///wypozyczanie ksiazki uzytkownikowi
-include("/templ_scripts/before_content_template.php");
-include("/templ_scripts/connect.php");
+include("templ_scripts/before_content_template.php");
+include("templ_scripts/connect.php");
 
 
 $user_id = $_SESSION['user_id_in_manage_panel'];
@@ -22,13 +22,13 @@ echo '
             <div class="hero-unit text-center ">
 
             <a  href="'.$return_link.'">Wróć do profilu użytkownika</a>
-            
+
                 <h2>Wypożycz ksiazke</h2>
                 <h6>Wypożyczenie dla użytkownika</h6>
 
 ';
               //pasek info o userze
-              include("/templ_scripts/user_info_table.php");
+              include("templ_scripts/user_info_table.php");
   echo '
 
 
@@ -54,6 +54,6 @@ echo '
               </div><!--/hero_unit-->
           </div><!--/span-->
 ';
-include("/templ_scripts/after_content_template.php");
+include("templ_scripts/after_content_template.php");
 mysql_close($id_conn);
 ?>

@@ -1,7 +1,7 @@
 <?php
 $copy_id = htmlspecialchars( isset($_POST['copy_id']) ? $_POST['copy_id'] : '' );
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 $return_link = "lib_del_copy_search.php".$_SESSION['search_copy_get_link']; //utworzenie linku powrotnego do strony z wyszukaniem
 
 $sql = "DELETE FROM copy
@@ -38,6 +38,6 @@ if ( $copy_id=="")
 }
 echo '<a class="btn" href="'.$return_link.'">Wróć do poprzedniej strony</a>';
 
-include '/templ_scripts/login_after_content_template.php';
+include 'templ_scripts/login_after_content_template.php';
 mysql_close($id_conn);
 ?>

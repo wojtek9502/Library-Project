@@ -1,7 +1,7 @@
 <?php
 
-include "/templ_scripts/connect.php";
-include '/templ_scripts/login_before_content_template.php';
+include "templ_scripts/connect.php";
+include 'templ_scripts/login_before_content_template.php';
 
 $user_id_to_del = $_SESSION['user_id_in_manage_panel'];
 
@@ -35,6 +35,6 @@ $info_query_result = mysql_query($info_query);
 
 echo '<a class="btn" href="index.php">Wróć do strony głównej</a>';
 
-include '/templ_scripts/login_after_content_template.php';
+include 'templ_scripts/login_after_content_template.php';
 mysql_close($id_conn);
 ?>
